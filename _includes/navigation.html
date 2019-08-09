@@ -1,8 +1,8 @@
 <nav>
   |
   {% for item in site.data.navigation %}
-    <a href="{{ item.link }}" {% if page.url == item.link %}class="current"{% endif %}>
+    <a href="{{ item.link }}" class="btn btn-outline-primary">
     {{ item.name }}</a> | 
   {% endfor %}
-  <a href="https://github.com/ZHYHenryZhang" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+  <a href="https://github.com/ZHYHenryZhang" class="btn btn-github"><span class="icon"></span>View my GitHub</a>
 </nav>
