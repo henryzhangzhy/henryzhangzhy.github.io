@@ -20,6 +20,9 @@ I would divide the sensor fusion systems into several categories and talk about 
 
 ## Mathematical Modeling Methods
 
+### [A Multi-Sensor Fusion System for Moving Object Detection and Tracking in Urban Driving Environments]()
+
+A paper on sensor fusion system using EKF to fuse LIDARs, raders and cameras. This paper presents a multi-layer fusion system. Layer one processes the raw sensor data and generate features. Layer two will generate proposals based on the features, partly across multiple sensor. Layer three fuse the sensor measurement using an Extend Kalman Fileter (EKF). Where measurements from all sensors are sequentialized and processed asynchronizedly. measurements are associated with the objects based their type and each type of measuremnt has its own measurement model.
 
 ---
 
