@@ -22,7 +22,7 @@ I would divide the sensor fusion systems into several categories and talk about 
 
 ### [A Multi-Sensor Fusion System for Moving Object Detection and Tracking in Urban Driving Environments](https://zhyhenryzhang.github.io/2019/08/12/a-multi-sensor-fusion-system-for-moving-object-detection-and-tracking-in-urban-driving-environments.html)
 
-This paper presents a two-layer fusion system. The sensor layer processes the raw sensor data and generates features and then generates proposals based on the features, partly across multiple sensors. The fusion layer fuses the sensor measurements using an Extend Kalman Fileter (EKF). Where measurements from all sensors are processed sequentially and asynchronously. Measurements are associated with the tracked objects based on their type. Each type of measuremnt has its own measurement model for update the associated object.
+This paper presents a two-layer fusion system. A sensor layer processes the raw sensor data and generates features and then generates proposals based on the features, partly across multiple sensors. The fusion layer fuses the sensor measurements using an Extended Kalman Fileter (EKF). Where measurements from all sensors are processed sequentially and asynchronously. Measurements are associated with the tracked objects based on their type. Each type of measuremnt has its own measurement model for update the associated object.
 
 ---
 
