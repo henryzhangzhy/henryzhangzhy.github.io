@@ -114,4 +114,4 @@ I think this is a very clear paper about sensor fusion. I like the proposed syst
 
 [3] H. Durrant-Whyte. _Multi Sensor Data Fusion_. Lecture Notes, 2006.
 
-[4] M. S. Darms, P. Rybski, C. Baker, and C. Urmson. Obstacle detection and trackign for the urban challenge. _IEEE Transaction on Intelligent Transportation Systems_, 10(3), 2009.
+[4] M. S. Darms, P. Rybski, C. Baker, and C. Urmson. Obstacle detection and tracking for the urban challenge. _IEEE Transaction on Intelligent Transportation Systems_, 10(3), 2009.
