@@ -52,5 +52,7 @@ where c_i = [x1 y1 x2 y2 class]^T, i = 1, 2, ..., r.
 
 ### Reference
 [1]  Cho, Hyunggi, et al. ”A multi-sensor fusion system for moving object detection and tracking in urban driving environments.” Robotics and Automation (ICRA), 2014 IEEE International Conference on. IEEE, 2014.
+
 [2] C. Mertz et al. Moving Object Detection with Laser Scanners. _Journal of Field Robotics_, 30(1):17-43, 2013.
+
 [3] M. S. Darms, P. Rybski, C. Baker, and C. Urmson. Obstacle detection and trackign for the urban challenge. _IEEE Transaction on Intelligent Transportation Systems_, 10(3), 2009.
