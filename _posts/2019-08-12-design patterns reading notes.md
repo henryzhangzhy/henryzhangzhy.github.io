@@ -14,3 +14,4 @@ I was amazed by some of the ideas from this book. So I decided to start a post a
 2. > It's important to understand the difference between an object's class and its type. An object's class defines how the object is implemented. The class defines the object's internal state and the implementation of its operations. In contrast, an object's type only refers to its interface--the set of requrests to which it can respond. An object can have many types, and objects of different classes can have the same type.
 
    I have never thought about it before. Class defines the implementation while type only refers to the interface. The reason probably because we often only use class inheritance in C++.
+
