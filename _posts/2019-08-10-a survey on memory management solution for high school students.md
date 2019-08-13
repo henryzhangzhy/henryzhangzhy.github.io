@@ -1,5 +1,5 @@
 ---
-Author: Henry
+author: Henry
 topic: Journey
 ---
 
