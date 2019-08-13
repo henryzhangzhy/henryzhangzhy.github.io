@@ -48,11 +48,70 @@ where c_i = [x1 y1 x2 y2 class]^T, i = 1, 2, ..., r.
 
 ## Fusion Layer
 
+The fusion of multiple sensor measurements employ the sequential-sensor method. Which treats observations from individual sensors idnependently and sequentially feeds them to the EKF's estimation process.
 
+### Tracking Models
+
+#### Motion Models
+
+A point model and a 3D box model is used for motion prediction. A point model is effective in localizing objects that are far away and we don't care about its shape and orientation. a 3D model is effective for objects that are near the vehicle and provides oritentaion and shape estimation.
+
+Here the point model is a constant acceleration model in 2D:
+
+x(k) = [x y vx vy ax ay]^T.
+
+and the box model is represented by:
+
+x(k) = [x y theta v omega a w l h]^T.
+
+where theta is yaw angle, omega is yaw rate, w is width, l is length, h is height.
+
+For more on motion model, [4] is a previous work on this.
+
+#### Observation Models
+
+observations from sensors will be associated with corresponding objects, then Observation model is applied to update the estimation. Data association will be introduce in the next section. If not associated with any esisting object, object instantiation should happen.
+
+We have observations from three sensors, they provide different information about the model. And we have both point model and box model. If we have corresponding update for all possibilities, we will have six observation models.
+
+But notice that radar cannot update the box target, it only update the point target.
+
+LIDAR measurements are primarily used for update the box target, it also can bu used to update the point target.
+
+Camera measurements cannot be used for position estimation due to poor depth estimation. Thus it is only applied to the box model for update the width and height.
+
+Detail about update step is not list in this post currently.
+
+### Data Association
+
+Measurement data is sequentially sent to the EKF, thus the association process will handle one measurement to all objects. A prediction step for all object should happen before association. And the association of prediction and measurement is sensor dependent.
+
+For LIDAR meansurements, association of point model is based on distance of prediction and measurment. For box models, possible interpretations of the edge target is generated and interpretations with max overlap with predicted object is selected. This in pratice occasionally fails thus vision target is utilized here. When vision target give higher reponse on a particular view of a vehicle (eg. back view), we can filter interpretations of other views (eg. side view).
+
+Association of camera measurements is achieved by projecting the prediction of the point model or box model into the pinhole camera model and compute the distance to the midpoint of the bottom line of the detected bounding box. The nearest neighbbor is associated.
+
+For association of radar measurements, a set of possible point targets are generated from predected model. Specifically, several points along the contour is generated for box model and one point for point model. The enhancement for box model is due to poor lateral position from radar. Association is made by the nearest-neighbor approach.
+
+### Movement Classifications
+
+Movement Classification is hard for LIDAR detection cause shape changes when the car is driving and the center is hard to estimate. I had a headache with this when I was doing shape estimation. This method is definitely worth trying.
+
+Two flags are set for movement classification same as [4].
+
+- the __movement history flag__ is raised when the tracking system determines that the position of a tracked object has significantly changed. The distance traveld is computed from the last time stamp that the object has been lcassified as not observed moving. Emprically determined thresholds for pedestrians, vehicles and ciclists are used to compare with the distance. 
+- the __movement state flag__ is raised when the tracking system determines that the object is moving. Radars provide the directly estimation of moving state while LIDAR can estimate the speed over time.
+
+### Comments
+
+Result shown 93.7% by human inspection. Not sure what this exactly means.
+
+I think this is a very clear paper about sensor fusion. I like the proposed system.
 
 ### Reference
-[1]  Cho, Hyunggi, et al. ”A multi-sensor fusion system for moving object detection and tracking in urban driving environments.” Robotics and Automation (ICRA), 2014 IEEE International Conference on. IEEE, 2014.
+[1]  Cho, Hyunggi, et al. A multi-sensor fusion system for moving object detection and tracking in urban driving environments. _Robotics and Automation (ICRA), 2014 IEEE International Conference on. IEEE_, 2014.
 
 [2] C. Mertz et al. Moving Object Detection with Laser Scanners. _Journal of Field Robotics_, 30(1):17-43, 2013.
 
-[3] M. S. Darms, P. Rybski, C. Baker, and C. Urmson. Obstacle detection and trackign for the urban challenge. _IEEE Transaction on Intelligent Transportation Systems_, 10(3), 2009.
+[3] H. Durrant-Whyte. _Multi Sensor Data Fusion_. Lecture Notes, 2006.
+
+[4] M. S. Darms, P. Rybski, C. Baker, and C. Urmson. Obstacle detection and trackign for the urban challenge. _IEEE Transaction on Intelligent Transportation Systems_, 10(3), 2009.
