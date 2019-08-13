@@ -5,7 +5,7 @@ topic: Autonomous Vehicles
 
 Reference page of sensor characteristics.
 
-I found it inevitably that we need to talk about sensor characteristics when discussing sensor fusion. So all discussion about sensors should go here for organizing them.
+Inevitably, we need to talk about sensor characteristics when discussing about sensor fusion. I don't want to repeat them too much when I am writing posts about sensor fusion. And it would be interesting to see how people think of sensors generally. So all discussion about sensors will go here.
 
 ---
 
