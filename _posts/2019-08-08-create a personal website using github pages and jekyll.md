@@ -113,6 +113,30 @@ Here are the steps:
   - wrap the include statement with {% raw %} {% if page.comments %} ... {$ endif %} {% endraw %} so that you can decide if you want comments in each post by setting comments: true or comments: false.
   - you can hide your comment by default, which make it load faster. Check out [this post](https://esc.sh/blog/load-disqus-on-click/).
   - add a field in your post header "comments: true" to the posts you want the comments.
+- up to this step, your localhost should display comments correctly, but not remote. You need to
+  - edit _config.yml
+    - edit 
+    ```yml
+    url: "https://yourgithubname.github.io"
+    ```
+    - add 
+    ```yml
+    disqus:
+      shortname: "https-zhyhenryzhang-github-io"
+    ```
+  - make sure your comments.html file include correct link
+    ```
+    s.src = '//' + short_name + ...
+    ```
+    if you start with
+    ```
+    s.src = 'https://' + ...
+    ```
+    It might not load.
+  - a few links that you can refer to
+    - [minima README.md](https://github.com/jekyll/minima)
+    - [a discussion](https://stackoverflow.com/questions/41613661/we-were-unable-to-load-disqus-with-jekylls-default-minima-theme)
+  - local is able to display cause JEKYLL_ENV = development and Github Pages use production by default. So if you set local to production, you will get the same result.
 
 ---
 
