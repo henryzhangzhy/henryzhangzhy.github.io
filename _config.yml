@@ -32,6 +32,9 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
 
+disqus:
+  shortname: https-zhyhenryzhang-github-io
+
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
