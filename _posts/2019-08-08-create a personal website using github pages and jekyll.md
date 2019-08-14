@@ -2,6 +2,7 @@
 # layout: post
 author: Henry
 topic: Geek
+comments: true
 ---
 
 This is a guide to help you setup your personal website using Github Pages and jekyll.
@@ -93,11 +94,29 @@ I would recommand you go through the [install guide](https://jekyllrb.com/docs/i
       - you can choose some [nice themes](https://github.com/pages-themes), and even change them, check the github pages for the theme for more information.
       - for each file you generated in this repo, look for their corresponding file in [Ruby 101](https://jekyllrb.com/docs/ruby-101/), you may copy some of the contents (\_\_config.yml, Gemfile) and try to understand them.
 
+---
 
+### 3. adding comments to your posts
+
+I think allowing interaction would be important for feedback, thus this part is added. If you definitely want to find the best solution for you, check this post for reference. [A post about different methods of hosting comments](https://darekkay.com/blog/static-site-comments/).
+
+I pick the easiest one, using Disqus.
+
+Here are the steps:
+
+- go to register an account in Disqus.
+- [accociate your website shortname](https://disqus.com/admin/create/) with your account, notice that this step cannot be changed once set.
+- add templates to your website
+  - choose Jekyll as your platform.
+  - copy the Embedded code to "comments.html" in your \_includes folder. You might want to uncomment some field here, check [this post](https://desiredpersona.com/disqus-comments-jekyll/) for reference, it use '\{\{ page\.url absolute\_url \}\}' for both PAGE\_URL and PAGE\_IDENTIFIER.
+  - add {% raw %} {% include comments.html %} {% endraw %} to your \_layouts/post\.html
+  - wrap the include statement with {% raw %} {% if page.comments %} ... {$ endif %} {% endraw %} so that you can decide if you want comments in each post by setting comments: true or comments: false.
+  - you can hide your comment by default, which make it load faster. Check out [this post](https://esc.sh/blog/load-disqus-on-click/).
+  - add a field in your post header "comments: true" to the posts you want the comments.
 
 ---
 
-### 3. next step
+### 4. next step
 
 You have already had a nice website here, the most important thing should be blogging, to organize your knowledge and contribute to the community.
 
@@ -106,7 +125,6 @@ But there are a few things you can do also.
 - update you github profile with you website.
 - link your github page to the website.
 - try out some [nice themes](https://github.com/pages-themes) offered by jekyll. [Hacker](https://github.com/pages-themes/hacker) is the one I am using, which is dark for eye care :p
-- adding comment function to your website to allow interaction.
 - blogging and more.
 
 ---
