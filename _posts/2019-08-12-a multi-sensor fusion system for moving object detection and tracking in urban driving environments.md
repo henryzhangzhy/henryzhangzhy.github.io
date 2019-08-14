@@ -1,6 +1,7 @@
 ---
 author: Henry
 topic: Autonomous Vehicles
+comments: true
 ---
 
 A paper on sensor fusion system using EKF to fuse LIDARs, raders and cameras.

@@ -1,6 +1,7 @@
 ---
 author: Henry
 topic: Autonomous Vehicles
+comments: true
 ---
 
 Reference page of sensor characteristics.

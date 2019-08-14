@@ -1,6 +1,7 @@
 ---
 author: Henry
 topic: Autonomous Vehicles
+comments: true
 ---
 
 Explore sensor fusion methods. Index page of findings in this area.

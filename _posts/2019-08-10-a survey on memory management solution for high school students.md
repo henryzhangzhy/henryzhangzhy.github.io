@@ -1,6 +1,7 @@
 ---
 author: Henry
 topic: Journey
+comments: true
 ---
 
 The journey of finding a solution for memory management for my brother.

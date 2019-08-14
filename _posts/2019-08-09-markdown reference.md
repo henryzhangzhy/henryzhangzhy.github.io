@@ -1,6 +1,7 @@
 ---
 author: Henry
 topic: Geek
+comments: true
 ---
 
 A reference for markdown language.

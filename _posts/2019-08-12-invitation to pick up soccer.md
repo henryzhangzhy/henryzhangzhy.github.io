@@ -1,6 +1,7 @@
 ---
 author: Henry
 topic: Journey
+comments: true
 ---
 
 Welcome to join our Facebook group [Pick up Soccer at UCSD](https://www.facebook.com/groups/106879100097849/)!
