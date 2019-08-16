@@ -140,7 +140,16 @@ Here are the steps:
 
 ---
 
-### 4. next step
+### 4. LaTeX support
+
+Important and extremely simple! Add a few scripts to your \_layout/post.html or default.html.
+Then you can add contents like $e=mc^2$ in \\[ \LaTeX. \\]
+You can get the script from [blog1](http://zjuwhw.github.io/2017/06/04/MathJax.html) and [blog2](http://blog.lostinmyterminal.com/webpages/2015/01/09/math-support-in-jekyll.html).
+Check [MathJax documentation](http://docs.mathjax.org/en/latest/tex.html#l) for reference. Note that official document mentioned that this is a limited LaTeX support.
+
+---
+
+### 5. next step
 
 You have already had a nice website here, the most important thing should be blogging, to organize your knowledge and contribute to the community.
 
