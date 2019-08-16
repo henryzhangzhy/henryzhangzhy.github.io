@@ -20,6 +20,6 @@ And a lot of tools picked up in class are forgotten after not being used when cl
 
 Learning in class without sufficient projects or other methods to output knowledge is a disaster. Short-term memory lost after reboot and long-term memory being overwritten. What a waste of time and effort!
 
-- [Probability]()
+- [Probability](https://zhyhenryzhang.github.io/2019/08/15/probability-notes.html)
 
 
