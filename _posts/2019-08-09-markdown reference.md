@@ -44,6 +44,9 @@ structure
 
   ```python
   square = [x*2 for x in range(10)]
+  square = []
+  for x in range(10):
+      square.append(x**2) // indent requires four spaces.
   ```
 
 ### links
