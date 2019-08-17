@@ -122,7 +122,7 @@ Here are the steps:
     - add 
     ```yml
     disqus:
-      shortname: "https-zhyhenryzhang-github-io"
+        shortname: "https-zhyhenryzhang-github-io"
     ```
   - make sure your comments.html file include correct link
     ```
