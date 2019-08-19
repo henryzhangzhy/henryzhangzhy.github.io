@@ -98,7 +98,7 @@ H_P(\mathbf{x} \| z_j) \triangleq - \mathop{\mathbb{E}} \lbrace \log P(\mathbf{x
 
 It shows the entropy of an n dimensional Gaussian Distribution is
 \begin{equation}
- - \frac{1}{2} \log \lbrack (2 \pi e)^n \| \mathbf{P} \| \rbrack. 
+  \- \frac{1}{2} \log \lbrack (2 \pi e)^n \| \mathbf{P} \| \rbrack. 
 \end{equation}
 
 The entropy is proportional to the log of the determinant of the covariance. The determinant of a matrix is a volume measure (recall that the determinant is the product of the eigenvalues of a matrix and the eigenvalues define axis lengths in n space).
