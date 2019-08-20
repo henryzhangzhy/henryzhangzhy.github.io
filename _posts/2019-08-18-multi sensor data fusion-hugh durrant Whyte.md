@@ -131,6 +131,24 @@ Interval Calculus, Fuzzy logic and Evidential Reasoning is introduced shortly.
 
 ### 3.1 The Kalman Filter
 
+With certain assuptions about the observation and process models, the resulting estimate $\dot{\mathbf{x}}(t)$ minimises mean-squared error
+\begin{equation}
+  L(t) = \int_{-\infty}^{\infty} (\mathbf{x}(t) - \hat{\mathbf{x}}(t))^T (\mathbf{x}(t) - \hat{\mathbf{x}}(t)) P(\mathbf{x}(t) \| \mathbf{Z}^t) \mathrm{d} \mathbf{x}.
+\end{equation}
+
+Differentiation of the above equation with respect to $\mathbf{x}(t)$ and setting equal to zero gives
+\begin{equation}
+  \hat{\mathbf{x}}(t) = \int_{-\infty}^{\infty} \mathbf{x}(t) P(\mathbf{x}(t) \| \mathbf{Z}^t) \mathrm{d} \mathbf{x}.
+\end{equation}
+
+which is simply the conditional mean $ \hat{\mathbf{x}}(t) = \mathop{\mathbb{E}}(\mathbf{x}(t) \| \mathbf{Z}^t).$
+
+The Kalman Filter, and indeed any mean-squared-error estimator, computes an estimate which is the conditional mean; an average, rather than a most likely value. (Q: what is the most likely value ?)
+
+#### 3.1.1 State and Sensor Models
+
+This section defineds the notations for Kalman Filter.
+
 ### 3.2 The Multi-Sensor Kalman Filter
 
 ### 3.3 Non-linear Data Fusion Methods
