@@ -6,7 +6,7 @@ comments: true
 
 Notes on _Multi Sensor Data Fusion_ from Hugh Durrant Whyte.
 
-This is a lecture note referenced in the paper that I talked about in the post [a multi-sensor fusion system for moving object detection and tracking in urban driving environments](https://zhyhenryzhang.github.io/2019/08/12/a-multi-sensor-fusion-system-for-moving-object-detection-and-tracking-in-urban-driving-environments.html). In this lecture note, the probability fundations and some methods of multi sensor fusion are discussed.
+This is a lecture note referenced in the paper that I talked about in the post [a multi-sensor fusion system for moving object detection and tracking in urban driving environments](https://zhyhenryzhang.github.io/2019/08/12/a-multi-sensor-fusion-system-for-moving-object-detection-and-tracking-in-urban-driving-environments.html). In this lecture note, the probability foundations and some methods of multi sensor fusion are discussed.
 
 ## 2 Probabilistic Data Fusion
 
@@ -240,20 +240,33 @@ Sensor will do filtering locally and pass the posterior to the center, the cente
 
 ### 3.3 Non-linear Data Fusion Methods
 
-Bayes filter is mentioned. Listed particle-filter and the sum-of-gaussians method 
+Bayes filter is mentioned. Listed particle-filter and the sum-of-gaussians (gaussian mixture) method.
 
 ### 3.4 Multi-Sensor Data Association
 
+The idea is to use the nomalized innovation distance.
+
 #### 3.4.1 The Nearest-Neighbour Standard Filter
+
+Match the closest one, not suitable for highly clustered detections.
 
 #### 3.4.2 The Probabilistic Data Association Filter
 
+Keep a mixture of all the observations within a certain range of the prediction to form a combined state and do the prediction again.
+
+The good thing is you are never wrong, but you are never right as well.
+
 #### 3.4.3 The Multiple Hypothesis Tracking (MHT) Filter
+
+Keep a hypothesis for all observations within certain range. Compute the likelihood and drop protential not good trackings.
 
 #### 3.4.4 Data Association in Track-to-Track Fusion
 
+Weighted average.
+
 #### 3.4.5 Maintaining and Managing Track Files
 
+Refer to other literature.
 
 ## Others
 
