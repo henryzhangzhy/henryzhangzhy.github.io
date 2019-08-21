@@ -147,13 +147,113 @@ The Kalman Filter, and indeed any mean-squared-error estimator, computes an esti
 
 #### 3.1.1 State and Sensor Models
 
-This section defineds the notations for Kalman Filter.
+This section defineds the notations for Kalman Filter. And shows how the model is discretized.
+
+The author claimed that it is always best to start with a continuous-time model for the state and then construct a discrete model, rather than stating the discrete model at the outset. This allows for correct identification of noise transfers and noise correlations. ??
+
+#### 3.1.2 The Kalman Filter Algorithm
+
+Prediction Step:
+\begin{equation}
+  \hat{\mathbf{x}}(k \| k-1) = \mathbf{F}(k) \hat{\mathbf{x}}(k-1 \| k-1) + \mathbf{B}(k) \mathbf{u}(k)
+\end{equation}
+\begin{equation}
+  \mathbf{P}(k \| k-1) = \mathbf{F}(k) \mathbf{P}(k-1 \| k-1) \mathbf{F}^T(k) + \mathbf{G}(k) \mathbf{Q}(k) \mathbf{G}^T(k)
+\end{equation}
+
+Update Step:
+\begin{equation}
+  v(k) = \mathbf{z}(k) - \mathbf{H}(k) \hat{\mathbf{x}}(k \| k-1)
+\end{equation}
+\begin{equation}
+  \mathbf{S}(k) = \mathbf{R}(k) + \mathbf{H}(k) \mathbf{P}(k \| k-1) \mathbf{H}^T(k)
+\end{equation}
+\begin{equation}
+  \hat{\mathbf{x}}(k \| k) = \hat{\mathbf{x}}(k \| k-1) - \mathbf{W}(k) v(k)
+\end{equation}
+\begin{equation}
+  \mathbf{P}(k \| k) = \mathbf{P}(k \| k-1) - \mathbf{W}(k) \mathbf{S}(k) \mathbf{W}^T(k)
+\end{equation}
+\begin{equation}
+  \mathbf{W}(k) = \mathbf{P}(k \| k-1) \mathbf{H}(k) \mathbf{S}^{-1}(k)
+\end{equation}
+
+#### 3.1.3 The Innovation
+
+Because the 'true' states are not usually available for comparison with the estimated states, the innovation is often the only measure of how well the estimator is performing. The most important property of innovation is that they form an orthogonal uncorrelated, white sequence,
+\begin{equation}
+  \mathop{\mathbb{E}} \lbrace v(k) \| \mathbf{Z}^{k-1} \rbrace = 0, \mathop{\mathbb{E}} \lbrace v(i)v^T(jj) \rbrace = \mathbf{S}(i) \delta_{ij}. 
+\end{equation}
+
+This can be exploited in monitoring filter performance.
+
+#### 3.1.4 Understanding the Kalman Filter
+
+There are three different, but related ways of thinking about the Kalman filter algorithm
+
+1. __Weighted average__
+
+Clearly, this interpretation of the Kalman filter holds only for those states which can be written as a linear combination of the observation vector.
+
+2. __Conditional mean__
+
+3. __Orthogonal decomposition__
+
+#### 3.1.5 Steady State Filter
+
+Using the fact that if filtering is synchronous, and state and observation matrics time-invariant, the filter variance will converge quickly, thus $\mathbf{W}$ matrix is also converged, we can skip the computation and use paramatric model to estimate it, reduce the computation greatly. 
+
+#### 3.1.6 Asynchronous, Delayed and Asequent observations
+
+Asynchronous means observations from different sensors don't come at the same time, but without delay. Can be addressed by taking time into account, make a prediction at observing time.
+Delayed means some observations is received by the filter with some delay after it is observed. Can be addressed by dropping the current prediction and make a prediction of the observing time of that sensor.
+Asequent means delay from different sensor cause the order of receiving is different from the the order of observations. It cannot be addressed easily unless you keep some observations and recompute the estimation. The author claim this can possibly be solved by a __inverse-covariance filter ??__.
+
+#### 3.1.7 The Extended Kalman Filter
+
+Linearization at the estimation point.
+
+A few comments from the author:
+
+1. Jacobians needs to be recomputed every time.
+2. The model is based on lieanrization at the estimated trajectory, thus if the estimation is not accurate, the second or higher order term cannot be ignored and make it useless. This also requires that initialization should be careful.
 
 ### 3.2 The Multi-Sensor Kalman Filter
 
+#### 3.2.1 Observation Models
+
+#### 3.2.2 The Group-Sensor Method
+
+It basiclly stacks all the observations and observation models, treating them as one sensor. The Kalman Filter can be directly applied. The problems is that sensors are assumed to be synchronous and computational complexity of matrix inversion is $\mathbf{O}(n^3)$ as the number of sensors increases.
+
+#### 3.2.3 The Sequential-Sensor Method
+
+Treat each observation and observation model independently, make a prediction and update each observation is made. The requires too much predicitons and updates when sensor number increases, though it is linear of the number of sensors. CMU paper [a multi-sensor fusion system for moving object detection and tracking in urban driving environments](https://zhyhenryzhang.github.io/2019/08/12/a-multi-sensor-fusion-system-for-moving-object-detection-and-tracking-in-urban-driving-environments.html) applied this method.
+
+#### 3.2.4 The Inverse-Covariance Form
+
+This is essentially a information filter, the good side is it simplifies the update step, while the only inversion would be the $P$ matrix, only of the size of states and not related to the number of sensors.
+
+#### 3.2.5 Track-to-Track Fusion
+
+Sensor will do filtering locally and pass the posterior to the center, the center will fuse them together. Method can be covariance-weighted Average.
+
 ### 3.3 Non-linear Data Fusion Methods
 
+Bayes filter is mentioned. Listed particle-filter and the sum-of-gaussians method 
+
 ### 3.4 Multi-Sensor Data Association
+
+#### 3.4.1 The Nearest-Neighbour Standard Filter
+
+#### 3.4.2 The Probabilistic Data Association Filter
+
+#### 3.4.3 The Multiple Hypothesis Tracking (MHT) Filter
+
+#### 3.4.4 Data Association in Track-to-Track Fusion
+
+#### 3.4.5 Maintaining and Managing Track Files
+
 
 ## Others
 
