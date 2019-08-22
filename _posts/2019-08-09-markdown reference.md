@@ -31,6 +31,9 @@ structure
 - __strong emphasis__: \_\_strong emphasis\_\_ or \*\*strong emphasis\*\*
 - **combined _emphasis_**: \*\*combined \_emphasis\_\*\*
 - ~~strike through~~: \~\~strike through\~\~
+- a new line in editor will result in no line break in the markdown display.
+- insert an empty to get a new paragraph
+- add <br\/> to the end of the line to get a new line. a single back slash \\ works for markdown but not generated website and double backslashes \\\\ works for a website but not markdown. Double space works for both but is not recommanded as editors sometimes delete them while saving.
 
 ### code
 
