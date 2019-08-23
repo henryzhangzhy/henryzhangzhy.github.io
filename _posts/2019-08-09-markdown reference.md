@@ -24,6 +24,9 @@ structure
    * \* works for unordered lists
    + \+ works the same
    - \- as well
+2. checked box
+   - [ ] unchecked
+   - [x] checked
 
 ### format
 
