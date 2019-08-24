@@ -281,3 +281,4 @@ Section 4 metions about distributed sensor fusion and 5 metions about decision m
 5. How to use information filter to solve asequent data?
 6. How to use information filter to solve multi sensor problems?
 7. How is the steady state filter parameter being choosed?
+8. What are the difference of the association methods?
