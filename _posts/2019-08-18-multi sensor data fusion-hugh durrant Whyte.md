@@ -271,3 +271,13 @@ Refer to other literature.
 ## Others
 
 Section 4 metions about distributed sensor fusion and 5 metions about decision make, which are not of interest here.
+
+
+# Questions
+1. How do we discretize the kalman filter?
+2. How is $\mathbf{HPH^T}$ a projection?
+3. How is the gain being computed?
+4. What are the three interpretation?
+5. How to use information filter to solve asequent data?
+6. How to use information filter to solve multi sensor problems?
+7. How is the steady state filter parameter being choosed?
