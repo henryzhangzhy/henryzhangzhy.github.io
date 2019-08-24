@@ -14,6 +14,22 @@ A few modules for learning multi sensor fusion with kalman filter.
 
 ---
 
+## Experiments
+
+1. Testing the relation of tracking performance and innovation.
+   - meansure the distance of the estimation and the ground truth.
+   - meansure the innovation.
+   - plot them as a function of time.
+2. Testing multi-sensing kalman filter and the performance gain.
+   - measure error when using one radar and two radar and more.
+   - change the position of the radar.
+   - using bearing sensor.
+3. Testing sequential method and group method, performance, time.
+4. Testing information filter
+5. Testing multi object data association methods.
+6. Testing asynchronous, delayed, asquent data.
+---
+
 ## Major Functions
 
 A simulated road with cars. A few sensors, sensing modules and a fusion model.<br/>
@@ -71,7 +87,7 @@ Benchmark tracking results with different tracking methods
 
 ## Questions
 
-1. How to handle relation of sensor and the world? How to let sensor get observation?
+1. How to handle relation of sensor and the world? How to let sensors get observation?
    - sensor.read()?? where the reference to world is stored in sensor?
    - sensor.read(world)?? where the reference to world is passed?
    - obj = world.get_object()  
@@ -90,6 +106,22 @@ Benchmark tracking results with different tracking methods
    - objects out of bound should be removed.
    - new objects should be generated at the boundary.
    - boundary needs to be specified by the ego_car or a view.
+6. Meta questions
+   - How to I generate a tracker from a proposal?<br/>
+     create a model depend on the proposal type
+   - What type of information does a proposal need to provide to a tracker?<br/>
+     - sensor type
+     - sensor data (no, but I need abstract away the sensor information)
+   - What is a proposal?
+     - It provides a possible object, along with a probability.
+   - Should proposal be defined as a type?
+   - should the pos defined as .x, .y, .z or pos(x, y, z)
+   - should the box include 3D?
+   - we want to generate the filter from point model, should we generate it inside the point class or outside?
+   - Fusion.py is tightly coupled with the way that sensors provide data. See class SensorData in sensor.py
+   - Kalman Filter that is competible with different time.
+   - prediction and association, how to coorperate?
+   - It becomes very hard to have testings.
 
 ---
 
