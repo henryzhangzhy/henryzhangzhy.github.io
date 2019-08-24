@@ -27,7 +27,7 @@ A few modules for learning multi sensor fusion with kalman filter.
 3. Testing sequential method and group method, performance, time.
 4. Testing information filter
 5. Testing multi object data association methods.
-6. Testing asynchronous, delayed, asquent data.
+6. Testing asynchronous, delayed, asequent data.
 ---
 
 ## Major Functions
@@ -58,7 +58,7 @@ Sensor model
   - synchronous
   - asynchronous
   - delayed
-  - asquent
+  - asequent
 - range maximum
 - probabilistic functioning.
 
