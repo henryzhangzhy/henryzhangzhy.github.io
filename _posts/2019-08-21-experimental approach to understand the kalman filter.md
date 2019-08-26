@@ -14,6 +14,63 @@ A few modules for learning multi sensor fusion with kalman filter.
 
 ---
 
+
+## Kalman Filter
+We have two motion models, a point model and a box model.
+
+The point model is a constant acceleration model in 2D, with the state $x = \[x, y, v_x, v_y, a_x, a_y\]^T$. 
+
+Initially, I implemented the Kalman Filter in this way.
+```python
+self.x_pre += dt * (self.mtx_transition @ self.x_post + np.dot(self.mtx_control, u))
+self.P_pre += (dt**2) * (self.mtx_transition @ self.P_post @ self.mtx_transition.T + self.noise_process)
+```
+Which I though would take the time into consideration. But it turns out that there is a second order term of dt in mtx_transition.
+
+With the method mentioned in [multi sensor fusion](https://zhyhenryzhang.github.io/2019/08/18/multi-sensor-data-fusion-hugh-durrant-Whyte.html).
+
+First, we define the continuous model as 
+\begin{equation}
+  \dot{\mathbf{x}}(t) = \begin{bmatrix} 
+                     0 & 0 & 1 & 0 & 0 & 0 \\\\ 
+                     0 & 0 & 0 & 1 & 0 & 0 \\\\ 
+                     0 & 0 & 0 & 0 & 1 & 0 \\\\ 
+                     0 & 0 & 0 & 0 & 0 & 1 \\\\ 
+                     0 & 0 & 0 & 0 & 0 & 0 \\\\ 
+                     0 & 0 & 0 & 0 & 0 & 0
+                     \end{bmatrix} \mathbf{x}(t).
+\end{equation}
+
+Then, we discretize the model $ \Delta{t} = t_{k}-t_{k-1}$ and get
+\begin{equation}
+  \mathbf{x}(t_{k}) = \begin{bmatrix}
+                      1 & 0 & \Delta{t} & 0 & \Delta{t}^2/2 & 0 \\\\ 
+                      0 & 1 & 0 & \Delta{t} & 0 & \Delta{t}^2/2 \\\\ 
+                      0 & 0 & 1 & 0 & \Delta{t} & 0 \\\\ 
+                      0 & 0 & 0 & 1 & 0 & \Delta{t} \\\\ 
+                      0 & 0 & 0 & 0 & 1 & 0 \\\\ 
+                      0 & 0 & 0 & 0 & 0 & 1
+                      \end{bmatrix} \mathbf{x}(t_{k-1})
+\end{equation}
+Thus we need to prepare the F first before we doing prediction. 
+
+Very nice result of error and innovation is obtained.
+With the correlation coefficient as below.
+```
+[[1.         0.30643922]
+ [0.30643922 1.        ]]
+```
+![Single Tracking]({{ site.url }}/assets/images/single_object_tracking_1.png)
+
+Single Object Tracking, below is the error and innovation.
+The error is defined as the position difference of the ground truth and the estimation.
+The innovation is defined as the length of the innovation in position of the Kalman Filter.
+
+![error and innovation]({{ site.url }}/assets/images/single_object_error_innovation_1.png)
+
+
+---
+
 ## Experiments
 
 1. Testing the relation of tracking performance and innovation.
@@ -28,6 +85,10 @@ A few modules for learning multi sensor fusion with kalman filter.
 4. Testing information filter
 5. Testing multi object data association methods.
 6. Testing asynchronous, delayed, asequent data.
+
+---
+
+Contents below will be kept unchanged, as a live mistake show on project design. I thought too much about reuse and extensibility before I get the program work. Details goes in the post [programming philosophy](https://zhyhenryzhang.github.io/2019/08/25/programming-philosophy-yinwang-reading-notes.html).
 
 ---
 
@@ -125,6 +186,7 @@ Benchmark tracking results with different tracking methods
    - It becomes very hard to have testings.
 
 ---
+
 
 ## Future work.
 
