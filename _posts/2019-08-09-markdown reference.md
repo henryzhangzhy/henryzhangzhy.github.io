@@ -79,6 +79,24 @@ example.com (but not on Github, for example).
 
 [logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 2"
 
+Github images
+```
+![Single Tracking](/assets/images/single_object_tracking_1.png)
+```
+
+The format is \! \[Alt Text\] \(link to image\)
+
+![Single_Tracking]({{ site.url }}/assets/images/single_object_tracking_1.png)
+img[alt=Single_Tracking] { width: 20px; }
+
+If you want to change the size, use html
+
+```HTML
+<img src="{{ site.url }}/assets/images/single_object_tracking_1.png" alt="drawing" width="500"/>
+```
+
+<img src="{{ site.url }}/assets/images/single_object_tracking_1.png" alt="drawing" width="500"/>
+
 
 ### Block Quate
 
