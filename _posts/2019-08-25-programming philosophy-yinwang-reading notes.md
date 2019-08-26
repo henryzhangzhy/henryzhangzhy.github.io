@@ -4,7 +4,7 @@ topic: Greek
 comments: true
 ---
 
-Notes on the nice post [programming philosophy](https://www.yinwang.org/blog-cn/2015/11/21/programming-philosophy) by [YingWang](https://www.yinwang.org/).
+Notes on the nice post [programming philosophy](https://www.yinwang.org/blog-cn/2015/11/21/programming-philosophy) by [YinWang](https://www.yinwang.org/).
 
 1. Refine your code again and again.
 
