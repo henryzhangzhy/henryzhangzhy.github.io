@@ -68,6 +68,24 @@ The innovation is defined as the length of the innovation in position of the Kal
 
 ![error and innovation]({{ site.url }}/assets/images/single_object_error_innovation_1.png)
 
+Interesting result about multi sensor fusion was found, that simply by adding more sensor wouldn't help improve the result. If the covariance of observation is too small, new observation in sequential fusion will just behave similar to overwrite the previous observation. A larger observation variance will fuse the multiple sensors better.
+Note that we then need to balance the prediction and observation noise together as well.
+check multi_sensor_tracking_error_innovation_5.png for reference.
+
+So now we have two balances.
+
+- The balance of prediction noise and observation noise.
+- The balance of observation coming from different sensors.
+
+Further parameter tunning shown that there is a conflict between the two balance, we can not get the best out of the data for a fixed covariance.
+
+In sequential filtering, the two balances are coupled. Because we treat them sequentially, the information of our previous update will be in the prediction. Let say if we trust our observation more. Then the later observation will simply overwrite the previous observation, even though they come at the same time. This is where order matters happens. And if we lower the confidence of our observation, then it takes longer to get initial filtering right.
+
+Another perspective comes from the data itself. For example, if the radar observation noise is proportional to the distance to that object. Then for two sensors that both observe the same object, but one is close to that object, the other is further, we should assign higher weights to the observation from the closer observation. But a sequential filtering system with fixed observation noise cannot handle this properly. (Think about order matters)
+
+This is also true for group fusion method, where we cannot just stack the same observation noise matrix diagonally to form the observation noise matrix. We should adjust them based on the confidence of the observation.
+
+__The the question becomes, how can we adjust the noise for single observation?__
 
 ---
 
@@ -184,6 +202,7 @@ Benchmark tracking results with different tracking methods
    - Kalman Filter that is competible with different time.
    - prediction and association, how to coorperate?
    - It becomes very hard to have testings.
+   - How to handle similar proposals, do we fuse proposal first or merge trackers?
 
 ---
 
