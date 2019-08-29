@@ -27,6 +27,16 @@ Notes on the nice post [programming philosophy](https://www.yinwang.org/blog-cn/
 
    Comments might not be necessary.<br/>
    - Use meaningful names for functions and variables, they speak for the comments.
+    
+     Take a look at the code, do you find the comments necessary?
+     ```python
+     def read(self, objs, time_acc):
+        ''' generate lidar scan from obj '''
+        # find visible edges of objs
+        visible_edges = self.find_visible_edges(objs)
+        # generate scan from edges
+        sensor_data = self.find_scan(visible_edges)
+     ```
    - Local variables should be defined close to where they are going to be used.
    - Short names for local variables, long "camelCase" names are hard to read as well.
    - Do not reuse local variables, use multiple instead.
@@ -63,6 +73,14 @@ Notes on the nice post [programming philosophy](https://www.yinwang.org/blog-cn/
    - Break the code at proper place.<br/>
      This pattern is often seen in function calls, complex logic expressions and text formatting.<br/>
      code example can check the if condition part in the function 'willMultiplyOverflow' above.
+   - Comments:
+     - It is generally true that we use verbs for method names, like find, get, compute, generate.
+       - Use get if it is there, or super fast. 
+       - Use find if it requires a requires computetaion.
+       - Compute, generate, calculate are fine, but just too long.
+       - math libraries often do not use get or find and they are fine, cause no attribute is called np.sqrt().
+       - <https://stackoverflow.com/questions/7151418/determining-which-verb-to-use-for-method-names-in-java>
+       - <https://softwareengineering.stackexchange.com/questions/182113/how-and-why-to-decide-between-naming-methods-with-get-and-find-prefixes>
    
 5. Write simple code
    - Avoid ++i, i++, use i++ only in for loop update or where it is a single line.
