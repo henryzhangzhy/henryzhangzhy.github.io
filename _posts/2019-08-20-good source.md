@@ -11,6 +11,8 @@ You are build upon what you read, what you think. It is worthy to keep track of 
 ## 1 blog
 - Yin Wang <https://www.yinwang.org><br/>
   Blogs about programming, programming language and critical thinking.
+- Pan Yang <https://akeeper.space/blog/>
+  Post about algorithms, leetcode.
 
 ## 2 Personal Website
 - Daniel P. Friedman <https://cs.indiana.edu/~dfried/><br/>
