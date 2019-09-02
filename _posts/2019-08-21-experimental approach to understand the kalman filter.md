@@ -202,7 +202,14 @@ Benchmark tracking results with different tracking methods
    - Kalman Filter that is competible with different time.
    - prediction and association, how to coorperate?
    - It becomes very hard to have testings.
-   - How to handle similar proposals, do we fuse proposal first or merge trackers?
+   - How to handle similar proposals, do we fuse proposal first or merge trackers? Merge close once.
+   - For each lidar detection, we can generate multiple proposal with different orientation. How to handle this?
+     - For each detection, If none of its proposals are matched, we initialize for all of them.
+     - If some matched, we pick the one with best fit, and remove all other matches.
+     - How to handle only match one when there are multiple association?
+       - pre-associate
+       - if no match, return None
+       - If more than one match, find best match and associate.
 
 ---
 
