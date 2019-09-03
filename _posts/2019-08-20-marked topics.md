@@ -14,6 +14,8 @@ Some interesting topics, might become posts.
 ## 1 Life
 1. Source: Source is defined as your input, the news you see, the books you read, the people you meet, What is your source? How do you manage your source? Is do you evaluate your source?
 2. Meta think: can you classify what type of questions are you thinking, generally or when you are programming?
+3. Do you feel happy, with what you have today?
+   - When I was a kid, I wished I would buy 100 chicken legs when I am rich. But now, I can't eat more than two without getting tired of it. I have better choices of food, but I am definitely not feeling happy because of this.
 
 ## 2 Job
 1. What kind of companies will help you grow faster? How do you know that before accept? How do you know that when you get in? How can you contribute to such environment?
