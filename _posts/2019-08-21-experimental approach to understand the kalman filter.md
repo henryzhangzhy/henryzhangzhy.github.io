@@ -89,6 +89,37 @@ __The the question becomes, how can we adjust the noise for single observation?_
 
 ---
 
+## Multi modal sensor fusion
+
+After adding the centered radar as the first sensor, I continued to add lidar to make a multi modal system.
+
+Adding lidar as a sensor, it would be natural to think about generating lidar point cloud and process the point cloud to estimate. But it turns out to be much more complicated than these two.
+
+The question becomes, what do we need to do to add a new sensor (modal)?
+1. generate sensor data from Object
+2. generate proposals from sensor data
+
+as the proposal is in fact a model, what if the sensor brings a new model to this system? In this case, we use point model for radar but lidar is more suitable to a box model.
+
+There are some problems in handling with multi models.
+1. generate tracker from proposals
+2. associate tracker with proposals
+3. update tracker using matched proposals
+
+And more detailed problems that are harder to notice.
+4. Do we convert multi models? When? How?
+5. Should we merge multi models? When? How?
+6. Do we associate trackers with all models to proposals from all sensors?
+
+And a problem specific for lidar.How to handle multiple proposals from detection of a single object? For example, when we get a set of points of a line, it can be any of the edges of a car, thus multiple proposals can be proposed from it. By how to handle it, we really means 
+7. Do we initialize a tracker for each proposal? Yes, when no more information.
+8. Do we treat them as separate observation or related? Related if from single detection, we only associate the most matched pair.
+9. How do we reduce the number of trackers when new information is available?
+
+Writing these down really helped organizing them :p
+
+---
+
 ## Experiments
 
 1. Testing the relation of tracking performance and innovation.
