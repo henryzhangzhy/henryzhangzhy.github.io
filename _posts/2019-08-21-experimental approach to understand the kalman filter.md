@@ -8,9 +8,10 @@ A few modules for learning multi sensor fusion with kalman filter.
 
 ---
 
-## Project
+## PyKFFusion
 
-[pykffusion](https://github.com/ZHYHenryZhang/pykffusion).
+[project link](https://github.com/ZHYHenryZhang/pykffusion).
+[drawing link](https://docs.google.com/drawings/d/1BHVoEV2kz0GJIh1zaZzxKpuBi689tOnlxy04gQNYBGw/edit?usp=sharing)
 
 ---
 
