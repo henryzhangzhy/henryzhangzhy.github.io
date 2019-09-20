@@ -109,14 +109,36 @@ There are some problems in handling with multi models.
 3. update tracker using matched proposals
 
 And more detailed problems that are harder to notice.
-4. Do we convert multi models? When? How?
-5. Should we merge multi models? When? How?
-6. Do we associate trackers with all models to proposals from all sensors?
+4. __Do we convert multi models? When? How?__
+
+   We convert a point model to a box model if a lidar observation is associated.
+   This will be achieved by keep the speed and acceleration from point model, added the shape information from lidar detection.
+
+   We convert a box model to a point model if lidar observation hasn't been associated for several frames beyond a threshold.
+   This will be achieved by removing the shape information.
+
+5. __Should we merge multi models? When? How?__
+
+   We will merge multi models if duplicated, if both point model and box model exists and the direction match, we will merge them to a box model.
+
+   For the case where there are multiple box model with different orientation, we should not merge them.
+
+6. __Do we associate trackers with all models to proposals from all sensors?__
+   
+   For now yes.
 
 And a problem specific for lidar.How to handle multiple proposals from detection of a single object? For example, when we get a set of points of a line, it can be any of the edges of a car, thus multiple proposals can be proposed from it. By how to handle it, we really means 
-7. Do we initialize a tracker for each proposal? Yes, when no more information.
-8. Do we treat them as separate observation or related? Related if from single detection, we only associate the most matched pair.
-9. How do we reduce the number of trackers when new information is available?
+7. __Do we initialize a tracker for each proposal?__
+   
+   Yes, when no more information.
+
+8. __Do we treat them as separate observation or related?__
+
+   Related if from single detection, we only associate the most matched pair.
+
+9. __How do we reduce the number of trackers when new information is available?__
+
+   Direction check.
 
 Writing these down really helped organizing them :p
 
