@@ -30,6 +30,7 @@ Some interesting topics, might become posts.
 3. The dilemma of the media, information sources, or information controllers?
 4. What would boost open and friendly cyber discussion? Why is it so much towards amusing and biased?
 5. Suppose that A company needs a service, B comany can provide the service that is better than the other competitors, the problem is it requires some time for operators in A get familidar with the tools. The representative from A seems not interested in that. B company promised the representative that he can get some 'returns' if he helped B get a chance to provide the service. What do you think about this?
+6. Is it a society that 'amusing to death'? If yes, how to solve this problem? Is it because technology or human nature?
 
 ## 5 Self analysis
 1. what are the factors that helped you get some work done? Teammates.
