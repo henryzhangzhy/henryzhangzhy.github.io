@@ -13,6 +13,8 @@ You are build upon what you read, what you think. It is worthy to keep track of 
   Blogs about programming, programming language and critical thinking.
 - Pan Yang <https://akeeper.space/blog/>
   Post about algorithms, leetcode.
+- 刘未鹏 <http://mindhacks.cn/>
+  Post about programming, math, and mindhacks.
 
 ## 2 Personal Website
 - Daniel P. Friedman <https://cs.indiana.edu/~dfried/><br/>
