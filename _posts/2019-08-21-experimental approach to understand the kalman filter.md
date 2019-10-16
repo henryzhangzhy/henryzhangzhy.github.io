@@ -89,6 +89,26 @@ This is also true for group fusion method, where we cannot just stack the same o
 
 __The the question becomes, how can we adjust the noise for single observation?__
 
+Continue the topic of modeling belief of the measurement.
+
+Suppose that we have a Lidar measurement, before we do the update, we have three process.
+
+1. sensor generated the raw data.
+2. raw data being processed to get a proposal.
+3. a proposal being matched with the tracker.
+
+Do we need to model the belief in each of these steps and how?
+
+We can model the sensor measurement belief. For radars, the bearing variance increases when the distance increases. For lidars, it is relative less influenced. (Requires further exploration).
+
+The proposal for a lidar data, for example, a 3D box model, can be examined how much it is aligned with the points. The problem here is coming up with a measurement that can be used across modals and update the prediction efficiently. We can assume that these are some hyper parameters that needs to be tuned.
+
+Association should not be taken into consideration. Suppose that we adjust our belief of measurement based on how far are they from the prediction, we are essentially saying we trust our prediction and treat it as ground truth. We should let the covariance decide how much they should adjust instead.
+
+__The Questions becomes, how to model sensor noise and proposal generation noise?__
+
+I will put this question on hold and suggest that we can use belief 1 for each measurement and figure out how the entire structure works, then we can come back and plug this part it by modifying the belief.
+
 ---
 
 ## Multi modal sensor fusion
