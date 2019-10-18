@@ -175,7 +175,7 @@ Update Step:
   \mathbf{P}(k \| k) = \mathbf{P}(k \| k-1) - \mathbf{W}(k) \mathbf{S}(k) \mathbf{W}^T(k)
 \end{equation}
 \begin{equation}
-  \mathbf{W}(k) = \mathbf{P}(k \| k-1) \mathbf{H}(k) \mathbf{S}^{-1}(k)
+  \mathbf{W}(k) = \mathbf{P}(k \| k-1) \mathbf{H}^T(k) \mathbf{S}^{-1}(k)
 \end{equation}
 
 #### 3.1.3 The Innovation
