@@ -6,7 +6,7 @@ comments: true
 
 I certainly don't know Uncertainty.
 
-This is the first post about the [knowledge upper bound](https://zhyhenryzhang.github.io/2019/08/15/knowledge-upper-bound.html) series, as notes about probability.
+This is the first post about the [knowledge upper bound](https://henryzhangzhy.github.io/2019/08/15/knowledge-upper-bound.html) series, as notes about probability.
 
 0. random variable.
 1. probability density function (pdf) $P_y(\cdot)$ is defined on a random variable $\mathbf{y}$.

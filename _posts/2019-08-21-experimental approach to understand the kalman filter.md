@@ -10,7 +10,7 @@ A few modules for learning multi sensor fusion with kalman filter.
 
 ## PyKFFusion
 
-[project link](https://github.com/ZHYHenryZhang/pykffusion)
+[project link](https://github.com/henryzhangzhy/pykffusion)
 
 [drawing link](https://docs.google.com/drawings/d/1BHVoEV2kz0GJIh1zaZzxKpuBi689tOnlxy04gQNYBGw/edit?usp=sharing)
 
@@ -29,7 +29,7 @@ self.P_pre += (dt**2) * (self.mtx_transition @ self.P_post @ self.mtx_transition
 ```
 Which I though would take the time into consideration. But it turns out that there is a second order term of dt in mtx_transition.
 
-With the method mentioned in [multi sensor fusion](https://zhyhenryzhang.github.io/2019/08/18/multi-sensor-data-fusion-hugh-durrant-Whyte.html).
+With the method mentioned in [multi sensor fusion](https://henryzhangzhy.github.io/2019/08/18/multi-sensor-data-fusion-hugh-durrant-Whyte.html).
 
 First, we define the continuous model as 
 \begin{equation}
@@ -181,7 +181,7 @@ Writing these down really helped organizing them :p
 
 ---
 
-Contents below will be kept unchanged, as a live mistake show on project design. I thought too much about reuse and extensibility before I get the program work. Details goes in the post [programming philosophy](https://zhyhenryzhang.github.io/2019/08/25/programming-philosophy-yinwang-reading-notes.html).
+Contents below will be kept unchanged, as a live mistake show on project design. I thought too much about reuse and extensibility before I get the program work. Details goes in the post [programming philosophy](https://henryzhangzhy.github.io/2019/08/25/programming-philosophy-yinwang-reading-notes.html).
 
 ---
 

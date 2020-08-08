@@ -143,10 +143,10 @@ Notes on the nice post [programming philosophy](https://www.yinwang.org/blog-cn/
 
 10. Avoid over engineering
     - Solve current problem, then think about extending.<br/>
-      Think about how you get stuck by the [pycar (private)](https://github.com/ZHYHenryZhang/pycar) or [pykffusion](https://github.com/ZHYHenryZhang/pykffusion) when you are thinking about extensibility and reusability. :)
+      Think about how you get stuck by the [pycar (private)](https://github.com/henryzhangzhy/pycar) or [pykffusion](https://github.com/henryzhangzhy/pykffusion) when you are thinking about extensibility and reusability. :)
     - Write correct code first, refine it, then think about reusability.
     - Write code that there is obviously no bug, then think about testing.<br/>
-      My [python_testing](https://github.com/ZHYHenryZhang/python_learn/tree/master/python_testing) gets hurt! :)
+      My [python_testing](https://github.com/henryzhangzhy/python_learn/tree/master/python_testing) gets hurt! :)
 
 
 

@@ -6,13 +6,13 @@ comments: true
 
 Notes on _Multi Sensor Data Fusion_ from Hugh Durrant Whyte.
 
-This is a lecture note referenced in the paper that I talked about in the post [a multi-sensor fusion system for moving object detection and tracking in urban driving environments](https://zhyhenryzhang.github.io/2019/08/12/a-multi-sensor-fusion-system-for-moving-object-detection-and-tracking-in-urban-driving-environments.html). In this lecture note, the probability foundations and some methods of multi sensor fusion are discussed.
+This is a lecture note referenced in the paper that I talked about in the post [a multi-sensor fusion system for moving object detection and tracking in urban driving environments](https://henryzhangzhy.github.io/2019/08/12/a-multi-sensor-fusion-system-for-moving-object-detection-and-tracking-in-urban-driving-environments.html). In this lecture note, the probability foundations and some methods of multi sensor fusion are discussed.
 
 ## 2 Probabilistic Data Fusion
 
 ### 2.1 Probabilistic Models
 
-Introduced definition of probability density function and its property. Conditional Probability and total probability theorem were explained. Details goes my post about [probability notes](https://zhyhenryzhang.github.io/2019/08/15/probability-notes.html)
+Introduced definition of probability density function and its property. Conditional Probability and total probability theorem were explained. Details goes my post about [probability notes](https://henryzhangzhy.github.io/2019/08/15/probability-notes.html)
 
 We use random variable $\mathbf{x}$ to represent the state that we want to estimate. use random variable $\mathbf{z}$ to represent the observation that we get.
 
@@ -228,7 +228,7 @@ It basiclly stacks all the observations and observation models, treating them as
 
 #### 3.2.3 The Sequential-Sensor Method
 
-Treat each observation and observation model independently, make a prediction and update each observation is made. The requires too much predicitons and updates when sensor number increases, though it is linear of the number of sensors. CMU paper [a multi-sensor fusion system for moving object detection and tracking in urban driving environments](https://zhyhenryzhang.github.io/2019/08/12/a-multi-sensor-fusion-system-for-moving-object-detection-and-tracking-in-urban-driving-environments.html) applied this method.
+Treat each observation and observation model independently, make a prediction and update each observation is made. The requires too much predicitons and updates when sensor number increases, though it is linear of the number of sensors. CMU paper [a multi-sensor fusion system for moving object detection and tracking in urban driving environments](https://henryzhangzhy.github.io/2019/08/12/a-multi-sensor-fusion-system-for-moving-object-detection-and-tracking-in-urban-driving-environments.html) applied this method.
 
 #### 3.2.4 The Inverse-Covariance Form
 
