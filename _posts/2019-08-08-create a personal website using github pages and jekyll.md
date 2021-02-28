@@ -63,17 +63,14 @@ I would recommand you go through the [install guide](https://jekyllrb.com/docs/i
 
 1. install the environment for jekyll.
 
-   install Ruby >= 2.4
+   install Ruby >= 2.4 follow [the guide for ubuntu](https://jekyllrb.com/docs/installation/ubuntu/).
 
    note that Ubuntu user might need to add repository
     
    ```bash
    sudo apt-add-repository ppa:brightbox/ruby-ng
    sudo apt-get update
-   sudo apt-get install ruby2.6 ruby2.6-dev
-   sudo apt-get build-essential zlib1g-dev
    ``` 
-   Then follow [the guide for ubuntu](https://jekyllrb.com/docs/installation/ubuntu/).
 
 2. go through the tutorial to setup your website.
    1. [Ruby 101](https://jekyllrb.com/docs/ruby-101/) will give you an idea what it can do. You can follow this quick demo to get a template website with just a few lines of commands.
