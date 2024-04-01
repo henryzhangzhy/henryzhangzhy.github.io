@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Geek on Hengyuan Zhang</title>
+        <link>http://localhost:1313/categories/geek/</link>
+        <description>Recent content in Geek on Hengyuan Zhang</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en</language>
+        <copyright>Hengyuan Zhang</copyright>
+        <lastBuildDate>Fri, 09 Aug 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/geek/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Markdown Reference</title>
+        <link>http://localhost:1313/p/markdown-reference/</link>
+        <pubDate>Fri, 09 Aug 2019 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/markdown-reference/</guid>
+        <description>&lt;p&gt;A reference for markdown language.&lt;/p&gt;
+&lt;p&gt;structure&lt;/p&gt;
+&lt;h1 id=&#34;title-&#34;&gt;title #&lt;/h1&gt;
+&lt;h2 id=&#34;second-level-title-&#34;&gt;second level title ##&lt;/h2&gt;
+&lt;h3 id=&#34;list&#34;&gt;list&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;a &amp;lsquo;-&amp;rsquo; followed by a space&lt;/li&gt;
+&lt;li&gt;a &amp;lsquo;-&amp;rsquo; another one&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;numbered list&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;actual number doesn&amp;rsquo;t matter, just a number&lt;/p&gt;
+&lt;p&gt;properly indented paragraph, with blank line and space.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;another sublist&lt;/li&gt;
+&lt;li&gt;here&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;* works for unordered lists&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;+ works the same&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;- as well&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;checked box&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; unchecked&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; checked&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;format&#34;&gt;format&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;emphasis&lt;/em&gt;: _emphasis_ or *emphasis*&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;strong emphasis&lt;/strong&gt;: __strong emphasis__ or **strong emphasis**&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;combined &lt;em&gt;emphasis&lt;/em&gt;&lt;/strong&gt;: **combined _emphasis_**&lt;/li&gt;
+&lt;li&gt;&lt;del&gt;strike through&lt;/del&gt;: ~~strike through~~&lt;/li&gt;
+&lt;li&gt;a new line in editor will result in no line break in the markdown display.&lt;/li&gt;
+&lt;li&gt;insert an empty to get a new paragraph&lt;/li&gt;
+&lt;li&gt;add &amp;lt;br/&amp;gt; to the end of the line to get a new line. a single back slash \ works for markdown but not generated website and double backslashes \\ works for a website but not markdown. Double space works for both but is not recommanded as editors sometimes delete them while saving.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;code&#34;&gt;code&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;`inline code` &lt;code&gt;inline code&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;```python&lt;/p&gt;
+&lt;p&gt;code block&lt;/p&gt;
+&lt;p&gt;```&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;square&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;x&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;range&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;square&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;x&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;range&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;square&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;append&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;**&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;//&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;indent&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;requires&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;four&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;spaces&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;links&#34;&gt;links&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.google.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Google&lt;/a&gt;: [Google](https://www.google.com)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.google.com&#34;  title=&#34;Google Homepage&#34;
+     target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Google&lt;/a&gt;: [Google](https://www.google.com &amp;quot;Google Homepage&amp;quot;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.reddit.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;reference style&lt;/a&gt;: [reference style][reference]&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;URLs and URLs in angle brackets will automatically get turned into links.
+&lt;a class=&#34;link&#34; href=&#34;http://www.example.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;http://www.example.com&lt;/a&gt; or &lt;a class=&#34;link&#34; href=&#34;http://www.example.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;http://www.example.com&lt;/a&gt; and sometimes
+example.com (but not on Github, for example).&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;[reference]: &lt;a class=&#34;link&#34; href=&#34;https://www.reddit.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.reddit.com&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Inline-style:
+&lt;img src=&#34;https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;alt text&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Reference-style:
+&lt;img src=&#34;https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;alt text&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Github images&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;![Single Tracking](/assets/images/single_object_tracking_1.png)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;The format is ! [Alt Text] (link to image)&lt;/p&gt;
+&lt;p&gt;![Single_Tracking]({{ site.url }}/assets/images/single_object_tracking_1.png)
+img[alt=Single_Tracking] { width: 20px; }&lt;/p&gt;
+&lt;p&gt;If you want to change the size, use html&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-HTML&#34; data-lang=&#34;HTML&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;img&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;src&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;{{ site.url }}/assets/images/single_object_tracking_1.png&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;alt&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;drawing&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;width&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;500&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;img src=&#34;{{ site.url }}/assets/images/single_object_tracking_1.png&#34; alt=&#34;drawing&#34; width=&#34;500&#34;/&gt;
+&lt;h3 id=&#34;block-quate&#34;&gt;Block Quate&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;blockquote&gt;
+&lt;p&gt;block quate
+continue&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Quote break&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;anther quaote that is very long long long long long long long long long long long long long long.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;reference&#34;&gt;Reference&lt;/h3&gt;
+&lt;p&gt;Adapted from
+&lt;a class=&#34;link&#34; href=&#34;https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Markdown Cheatsheet&lt;/a&gt; by &lt;a class=&#34;link&#34; href=&#34;https://github.com/adam-p&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;adam-p&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Licence: &lt;a class=&#34;link&#34; href=&#34;https://creativecommons.org/licenses/by/3.0/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;CC-BY&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Guide to make personal website using Github Pages and Jekyll</title>
+        <link>http://localhost:1313/p/guide-to-make-personal-website-using-github-pages-and-jekyll/</link>
+        <pubDate>Thu, 08 Aug 2019 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/guide-to-make-personal-website-using-github-pages-and-jekyll/</guid>
+        <description>&lt;p&gt;This is a guide to help you setup your personal website using Github Pages and jekyll.&lt;/p&gt;
+&lt;p&gt;What do you need for a personal website?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;some webpages.&lt;/li&gt;
+&lt;li&gt;a server.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Webpages are some HTML that defines the content of your website.&lt;/p&gt;
+&lt;p&gt;A server will host your website so that anybody can get access to it through the internet.&lt;/p&gt;
+&lt;p&gt;Github Pages allow you create a repository with the name of your accountname.github.io, if you put some HTML files on that repository and push it to github. It will generate your website for you, &lt;strong&gt;for free&lt;/strong&gt;!&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;1-setup-github-pages&#34;&gt;1. setup Github Pages&lt;/h3&gt;
+&lt;p&gt;Following content will tell you how to setup Github Pages (the server side) and create a simple HTML page. The content are directly copied from &lt;a class=&#34;link&#34; href=&#34;https://pages.github.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Github Pages&lt;/a&gt;[1]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Head over to GitHub and create a new repository named username.github.io, where username is your username (or organization name) on GitHub.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Go to the folder where you want to store your project, and clone the new repository.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git clone https://github.com/username/username.github.io
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Enter the project folder and add an index.html file.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; username.github.io
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Hello World&amp;#34;&lt;/span&gt; &amp;gt; index.html
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add, commit, and push your changes:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git add --all
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git commit -m &lt;span class=&#34;s2&#34;&gt;&amp;#34;Initial commit&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git push -u origin master
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Fire up a browser and go to &lt;a class=&#34;link&#34; href=&#34;https://username.github.io&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://username.github.io&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Actually, be patient as there might be a delay : )&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;2-build-your-local-website&#34;&gt;2. build your local website&lt;/h3&gt;
+&lt;p&gt;Now, you should be able to see you website hosted by github. The next step is to create your website pages  and setup you blog.&lt;/p&gt;
+&lt;p&gt;What do you need for your webpages?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;HTML for web content&lt;/li&gt;
+&lt;li&gt;CSS for style, like layout and formatting.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Jekyll is a powerful tool in a sense that you don&amp;rsquo;t need to know much about HTML or CSS for your website. It&amp;rsquo;s default theme will work fine for the style. And the cool part is that you can write webpages in Markdown. Jekyll will generate the HTML for you.&lt;/p&gt;
+&lt;p&gt;I would recommand you go through the &lt;a class=&#34;link&#34; href=&#34;https://jekyllrb.com/docs/installation/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;install guide&lt;/a&gt; and &lt;a class=&#34;link&#34; href=&#34;https://jekyllrb.com/docs/step-by-step/01-setup&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;jekyll tutorial&lt;/a&gt;[1] for a step by step setup. I will list a few keypoints here for your reference.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;install the environment for jekyll.&lt;/p&gt;
+&lt;p&gt;install Ruby &amp;gt;= 2.4 follow &lt;a class=&#34;link&#34; href=&#34;https://jekyllrb.com/docs/installation/ubuntu/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;the guide for ubuntu&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;note that Ubuntu user might need to add repository&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt-add-repository ppa:brightbox/ruby-ng
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt-get update
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;go through the tutorial to setup your website.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://jekyllrb.com/docs/ruby-101/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Ruby 101&lt;/a&gt; will give you an idea what it can do. You can follow this quick demo to get a template website with just a few lines of commands.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;After seeing the pattern at &lt;a class=&#34;link&#34; href=&#34;https://jekyllrb.com/docs/ruby-101/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Ruby 101&lt;/a&gt;, you can start to build your own website. Go to your local clone of your website repository, follow the &lt;a class=&#34;link&#34; href=&#34;https://jekyllrb.com/docs/step-by-step/01-setup/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;step by step tutorial&lt;/a&gt; to setup your website.&lt;/p&gt;
+&lt;p&gt;It major contain the following contents&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;create a simple site&lt;/li&gt;
+&lt;li&gt;adding a few pages&lt;/li&gt;
+&lt;li&gt;make a navigation bar for all pages&lt;/li&gt;
+&lt;li&gt;adding style&lt;/li&gt;
+&lt;li&gt;adding blogs&lt;/li&gt;
+&lt;li&gt;organizing blogs by author (I did this by topic)&lt;/li&gt;
+&lt;li&gt;deploy your website&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A few comments would be.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;you can choose some &lt;a class=&#34;link&#34; href=&#34;https://github.com/pages-themes&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;nice themes&lt;/a&gt;, and even change them, check the github pages for the theme for more information.&lt;/li&gt;
+&lt;li&gt;for each file you generated in this repo, look for their corresponding file in &lt;a class=&#34;link&#34; href=&#34;https://jekyllrb.com/docs/ruby-101/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Ruby 101&lt;/a&gt;, you may copy some of the contents (__config.yml, Gemfile) and try to understand them.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;3-adding-comments-to-your-posts&#34;&gt;3. adding comments to your posts&lt;/h3&gt;
+&lt;p&gt;I think allowing interaction would be important for feedback, thus this part is added. If you definitely want to find the best solution for you, check this post for reference. &lt;a class=&#34;link&#34; href=&#34;https://darekkay.com/blog/static-site-comments/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;A post about different methods of hosting comments&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I pick the easiest one, using Disqus.&lt;/p&gt;
+&lt;p&gt;Here are the steps:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;go to register an account in Disqus.&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://disqus.com/admin/create/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;accociate your website shortname&lt;/a&gt; with your account, notice that this step cannot be changed once set.&lt;/li&gt;
+&lt;li&gt;add templates to your website
+&lt;ul&gt;
+&lt;li&gt;choose Jekyll as your platform.&lt;/li&gt;
+&lt;li&gt;copy the Embedded code to &amp;ldquo;comments.html&amp;rdquo; in your _includes folder. You might want to uncomment some field here, check &lt;a class=&#34;link&#34; href=&#34;https://desiredpersona.com/disqus-comments-jekyll/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;this post&lt;/a&gt; for reference, it use &amp;lsquo;{{ page.url absolute_url }}&amp;rsquo; for both PAGE_URL and PAGE_IDENTIFIER.&lt;/li&gt;
+&lt;li&gt;add {% raw %} {% include comments.html %} {% endraw %} to your _layouts/post.html&lt;/li&gt;
+&lt;li&gt;wrap the include statement with {% raw %} {% if page.comments %} &amp;hellip; {$ endif %} {% endraw %} so that you can decide if you want comments in each post by setting comments: true or comments: false.&lt;/li&gt;
+&lt;li&gt;you can hide your comment by default, which make it load faster. Check out &lt;a class=&#34;link&#34; href=&#34;https://esc.sh/blog/load-disqus-on-click/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;this post&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;add a field in your post header &amp;ldquo;comments: true&amp;rdquo; to the posts you want the comments.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;up to this step, your localhost should display comments correctly, but not remote. You need to
+&lt;ul&gt;
+&lt;li&gt;edit _config.yml
+&lt;ul&gt;
+&lt;li&gt;edit&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yml&#34; data-lang=&#34;yml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;url&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;https://yourgithubname.github.io&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;add&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yml&#34; data-lang=&#34;yml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;disqus&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;shortname&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;https-zhyhenryzhang-github-io&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;make sure your comments.html file include correct link
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;s.src = &amp;#39;//&amp;#39; + short_name + ...
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;if you start with
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;s.src = &amp;#39;https://&amp;#39; + ...
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;It might not load.&lt;/li&gt;
+&lt;li&gt;a few links that you can refer to
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/jekyll/minima&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;minima README.md&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://stackoverflow.com/questions/41613661/we-were-unable-to-load-disqus-with-jekylls-default-minima-theme&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;a discussion&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;local is able to display cause JEKYLL_ENV = development and Github Pages use production by default. So if you set local to production, you will get the same result.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;4-latex-support&#34;&gt;4. LaTeX support&lt;/h3&gt;
+&lt;p&gt;Important and extremely simple! Add a few scripts to your _layout/post.html or default.html.
+Then you can add contents like $e=mc^2$ in \[ \LaTeX. \]
+You can get the script from &lt;a class=&#34;link&#34; href=&#34;http://zjuwhw.github.io/2017/06/04/MathJax.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;blog1&lt;/a&gt; and &lt;a class=&#34;link&#34; href=&#34;http://blog.lostinmyterminal.com/webpages/2015/01/09/math-support-in-jekyll.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;blog2&lt;/a&gt;.
+Check &lt;a class=&#34;link&#34; href=&#34;http://docs.mathjax.org/en/latest/tex.html#l&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;MathJax documentation&lt;/a&gt; for reference. Note that official document mentioned that this is a limited LaTeX support.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;5-next-step&#34;&gt;5. next step&lt;/h3&gt;
+&lt;p&gt;You have already had a nice website here, the most important thing should be blogging, to organize your knowledge and contribute to the community.&lt;/p&gt;
+&lt;p&gt;But there are a few things you can do also.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;update you github profile with you website.&lt;/li&gt;
+&lt;li&gt;link your github page to the website.&lt;/li&gt;
+&lt;li&gt;try out some &lt;a class=&#34;link&#34; href=&#34;https://github.com/pages-themes&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;nice themes&lt;/a&gt; offered by jekyll. &lt;a class=&#34;link&#34; href=&#34;https://github.com/pages-themes/hacker&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Hacker&lt;/a&gt; is the one I am using, which is dark for eye care :p&lt;/li&gt;
+&lt;li&gt;blogging and more.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;reference&#34;&gt;Reference:&lt;/h3&gt;
+&lt;p&gt;[1] &lt;a class=&#34;link&#34; href=&#34;https://pages.github.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://pages.github.com&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[2] &lt;a class=&#34;link&#34; href=&#34;https://jekyllrb.com/docs/step-by-step/01-setup&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://jekyllrb.com/docs/step-by-step/01-setup&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[3] &lt;a class=&#34;link&#34; href=&#34;https://github.com/pages-themes/hacker&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/pages-themes/hacker&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

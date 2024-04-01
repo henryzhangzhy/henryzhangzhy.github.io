@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Notes on multi-sensor fusion.">
+<title>Multi-sensor Data Fusion Hugh Durrant Whyte</title>
+
+<link rel='canonical' href='http://localhost:1313/p/multi-sensor-data-fusion-hugh-durrant-whyte/'>
+
+<link rel="stylesheet" href="/scss/style.min.d8118f156935b64eca93aca758476adca858d2c47354971654d9bd2933a0e45f.css"><meta property='og:title' content="Multi-sensor Data Fusion Hugh Durrant Whyte">
+<meta property='og:description' content="Notes on multi-sensor fusion.">
+<meta property='og:url' content='http://localhost:1313/p/multi-sensor-data-fusion-hugh-durrant-whyte/'>
+<meta property='og:site_name' content='Hengyuan Zhang'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Sensor Fusion' /><meta property='article:published_time' content='2019-08-08T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2019-08-08T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="Multi-sensor Data Fusion Hugh Durrant Whyte">
+<meta name="twitter:description" content="Notes on multi-sensor fusion.">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/henry-profile-250x250_hu60d509e5834f11198ece7692e1aa1bc4_12492_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Hengyuan Zhang</a></h1>
+            <h2 class="site-description">Ph.D. Candidate UCSD CSE | Robotics | Autonomous Vehicles | Online Mapping | Sensor Fusion</h2>
+        </div>
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='https://github.com/henryzhangzhy'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.linkedin.com/in/henryzhangzhy/'
+                        target="_blank"
+                        title="Linkedin"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" /><path d="M8 11l0 5" /><path d="M8 8l0 .01" /><path d="M12 16l0 -5" /><path d="M16 16v-3a2 2 0 0 0 -4 0" /></svg>
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="http://localhost:1313/" selected>English</option>
+                                
+                                    <option value="http://localhost:1313/zh-cn/" >中文</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#2-probabilistic-data-fusion">2 Probabilistic Data Fusion</a>
+      <ol>
+        <li><a href="#21-probabilistic-models">2.1 Probabilistic Models</a></li>
+        <li><a href="#22-probabilistic-methods">2.2 Probabilistic Methods</a>
+          <ol>
+            <li><a href="#221-bayes-theorem">2.2.1 Bayes theorem</a></li>
+            <li><a href="#222-data-fusion-using-bayes-theorem">2.2.2 Data Fusion using Bayes Theorem</a></li>
+            <li><a href="#223-recursive-bayes-updating">2.2.3 Recursive Bayes Updating</a></li>
+            <li><a href="#224-data-dependency-and-bayes-networks">2.2.4 Data Dependency and Bayes Networks</a></li>
+            <li><a href="#225-distributed-data-fusion-with-bayes-theorem">2.2.5 Distributed Data Fusion with Bayes Theorem</a></li>
+            <li><a href="#226-data-fusion-with-log-likelihoods">2.2.6 Data Fusion with Log-Likelihoods</a></li>
+          </ol>
+        </li>
+        <li><a href="#23-information-measures">2.3 Information Measures</a>
+          <ol>
+            <li><a href="#231-entropic-information">2.3.1 Entropic Information</a></li>
+            <li><a href="#232-conditional-entropy">2.3.2 Conditional Entropy</a></li>
+            <li><a href="#233-mutual-information">2.3.3 Mutual Information</a></li>
+            <li><a href="#234-fisher-information">2.3.4 Fisher Information</a></li>
+          </ol>
+        </li>
+        <li><a href="#24-alternatives-to-probability">2.4 Alternatives to Probability</a></li>
+      </ol>
+    </li>
+    <li><a href="#3-multi-sensor-estimation">3 Multi-Sensor Estimation</a>
+      <ol>
+        <li><a href="#31-the-kalman-filter">3.1 The Kalman Filter</a>
+          <ol>
+            <li><a href="#311-state-and-sensor-models">3.1.1 State and Sensor Models</a></li>
+            <li><a href="#312-the-kalman-filter-algorithm">3.1.2 The Kalman Filter Algorithm</a></li>
+            <li><a href="#313-the-innovation">3.1.3 The Innovation</a></li>
+            <li><a href="#314-understanding-the-kalman-filter">3.1.4 Understanding the Kalman Filter</a></li>
+            <li><a href="#315-steady-state-filter">3.1.5 Steady State Filter</a></li>
+            <li><a href="#316-asynchronous-delayed-and-asequent-observations">3.1.6 Asynchronous, Delayed and Asequent observations</a></li>
+            <li><a href="#317-the-extended-kalman-filter">3.1.7 The Extended Kalman Filter</a></li>
+          </ol>
+        </li>
+        <li><a href="#32-the-multi-sensor-kalman-filter">3.2 The Multi-Sensor Kalman Filter</a>
+          <ol>
+            <li><a href="#321-observation-models">3.2.1 Observation Models</a></li>
+            <li><a href="#322-the-group-sensor-method">3.2.2 The Group-Sensor Method</a></li>
+            <li><a href="#323-the-sequential-sensor-method">3.2.3 The Sequential-Sensor Method</a></li>
+            <li><a href="#324-the-inverse-covariance-form">3.2.4 The Inverse-Covariance Form</a></li>
+            <li><a href="#325-track-to-track-fusion">3.2.5 Track-to-Track Fusion</a></li>
+          </ol>
+        </li>
+        <li><a href="#33-non-linear-data-fusion-methods">3.3 Non-linear Data Fusion Methods</a></li>
+        <li><a href="#34-multi-sensor-data-association">3.4 Multi-Sensor Data Association</a>
+          <ol>
+            <li><a href="#341-the-nearest-neighbour-standard-filter">3.4.1 The Nearest-Neighbour Standard Filter</a></li>
+            <li><a href="#342-the-probabilistic-data-association-filter">3.4.2 The Probabilistic Data Association Filter</a></li>
+            <li><a href="#343-the-multiple-hypothesis-tracking-mht-filter">3.4.3 The Multiple Hypothesis Tracking (MHT) Filter</a></li>
+            <li><a href="#344-data-association-in-track-to-track-fusion">3.4.4 Data Association in Track-to-Track Fusion</a></li>
+            <li><a href="#345-maintaining-and-managing-track-files">3.4.5 Maintaining and Managing Track Files</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#others">Others</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/autonomous-vehicles/" style="background-color: #2a9d8f; color: #fff;">
+                Autonomous Vehicles
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/multi-sensor-data-fusion-hugh-durrant-whyte/">Multi-sensor Data Fusion Hugh Durrant Whyte</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            Notes on multi-sensor fusion.
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Aug 08, 2019</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    8 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>Notes on <em>Multi Sensor Data Fusion</em> from Hugh Durrant Whyte.</p>
+<p>This is a lecture note referenced in the paper that I talked about in the post <a class="link" href="https://henryzhangzhy.github.io/2019/08/12/a-multi-sensor-fusion-system-for-moving-object-detection-and-tracking-in-urban-driving-environments.html"  target="_blank" rel="noopener"
+    >a multi-sensor fusion system for moving object detection and tracking in urban driving environments</a>. In this lecture note, the probability foundations and some methods of multi sensor fusion are discussed.</p>
+<h2 id="2-probabilistic-data-fusion">2 Probabilistic Data Fusion</h2>
+<h3 id="21-probabilistic-models">2.1 Probabilistic Models</h3>
+<p>Introduced definition of probability density function and its property. Conditional Probability and total probability theorem were explained. Details goes my post about <a class="link" href="https://henryzhangzhy.github.io/2019/08/15/probability-notes.html"  target="_blank" rel="noopener"
+    >probability notes</a></p>
+<p>We use random variable $\mathbf{x}$ to represent the state that we want to estimate. use random variable $\mathbf{z}$ to represent the observation that we get.</p>
+<h3 id="22-probabilistic-methods">2.2 Probabilistic Methods</h3>
+<h4 id="221-bayes-theorem">2.2.1 Bayes theorem</h4>
+<p>Bayes theorem offers the tool to directly combine observations and prior beliefs.
+$$\begin{equation}
+P(\mathbf{x} | \mathbf{z}) = \frac{P(\mathbf{z} | \mathbf{x}) P(\mathbf{x})}{P(\mathbf{z})} .
+\end{equation}$$</p>
+<h4 id="222-data-fusion-using-bayes-theorem">2.2.2 Data Fusion using Bayes Theorem</h4>
+<p>For multi sensor fusion, we want to combine the information of multiple observations, thus we have
+$$\begin{equation}
+P(\mathbf{x} | \mathbf{Z^n}) = \frac{P(\mathbf{Z^n} | \mathbf{x}) P(\mathbf{x})}{P(\mathbf{Z^n})} .
+\end{equation}$$
+Since it is often the case that observations are only dependent on the internal state $\mathbf{x}$, or conditionally independent on $\mathbf{x}$. We have
+$$\begin{equation}
+P(\mathbf{x} | \mathbf{Z^n}) = CP(\mathbf{x}) \sum_{i=1}^{n}P(\mathbf{z_i} | \mathbf{x}).
+\end{equation}$$</p>
+<h4 id="223-recursive-bayes-updating">2.2.3 Recursive Bayes Updating</h4>
+<p>Do we have to start from the initial prior all the time, multiplying all the probability of observations? We can actually do it recursively.</p>
+<p>$$\begin{equation}
+P(\mathbf{x}|\mathbf{Z^k}) = \frac{P(\mathbf{Z^k}|\mathbf{x})P(\mathbf{x})}{P(\mathbf{Z^k})}
+\end{equation}$$
+$$\begin{equation}
+= \frac{P(\mathbf{z_k}, \mathbf{Z^{k-1}}|\mathbf{x})P(\mathbf{x})}{P(\mathbf{Z^k})}
+\end{equation}$$
+$$\begin{equation}
+= \frac{P(\mathbf{z_k} | \mathbf{x})P(\mathbf{Z^{k-1}}|\mathbf{x})P(\mathbf{x})}{P(\mathbf{Z^k})}
+\end{equation}$$
+$$\begin{equation}
+= \frac{P(\mathbf{z_k} | \mathbf{x})P(\mathbf{x}|\mathbf{Z^{k-1}})P(\mathbf{Z^{k-1}})}{P(\mathbf{Z^k})}
+\end{equation}$$
+$$\begin{equation}
+= \frac{P(\mathbf{z_k} | \mathbf{x})P(\mathbf{x}|\mathbf{Z^{k-1}})}{P(\mathbf{z_k}|\mathbf{Z^{k-1}})}.<br>
+\end{equation}$$</p>
+<h4 id="224-data-dependency-and-bayes-networks">2.2.4 Data Dependency and Bayes Networks</h4>
+<p>Short Introduction to be belief networks.</p>
+<h4 id="225-distributed-data-fusion-with-bayes-theorem">2.2.5 Distributed Data Fusion with Bayes Theorem</h4>
+<p>Distributed means raw data is processed in the sensor module. This has the advantage that each sensor is <strong>&lsquo;modular&rsquo;</strong> and talks in a common <strong>&lsquo;state&rsquo;</strong> language. However, it has the disadvantage that a complete likelihood, rather than a single observation, must be communicated.</p>
+<h4 id="226-data-fusion-with-log-likelihoods">2.2.6 Data Fusion with Log-Likelihoods</h4>
+<p>If we take log of the Beyes Theorem, it becomes
+$$\begin{equation}
+\mathbf{l}(\mathbf{x} | \mathbf{z}) = \mathbf{l}(\mathbf{z} | \mathbf{x}) + \mathbf{l}(\mathbf{x}) - \mathbf{l}(\mathbf{z}).
+\end{equation}$$</p>
+<p>This simplifies the calculation.</p>
+<h3 id="23-information-measures">2.3 Information Measures</h3>
+<p>Information is a measure of the compactness of a distribution. The shannon information (or entropy) and the Fisher information are two probabilistic measures of information of particular value in data fusion problems.</p>
+<h4 id="231-entropic-information">2.3.1 Entropic Information</h4>
+<p>$$\begin{equation}
+H_P(\mathbf{x}) \triangleq - \mathop{\mathbb{E}} \lbrace \log P(\mathbf{x})\rbrace = - \int_{-\infty}^{\infty}P(\mathbf{x}) \mathrm{d}\mathbf{x}.
+\end{equation}$$</p>
+<p>Note that $H_P(\cdot)$ is not strictly a function of $\mathbf{x}$ but is rather a function of the distribution $P(\cdot)$.</p>
+<h4 id="232-conditional-entropy">2.3.2 Conditional Entropy</h4>
+<p>$$\begin{equation}
+H_P(\mathbf{x} | z_j) \triangleq - \mathop{\mathbb{E}} \lbrace \log P(\mathbf{x} | z_j) \rbrace = - \int_{-\infty}^{\infty}P(\mathbf{x} | z_j) \mathrm{d}\mathbf{x}.
+\end{equation}$$</p>
+<p>$$\begin{equation}
+\bar{H}(\mathbf{x} | \mathbf{z}) \triangleq - \mathop{\mathbb{E}} \lbrace H(\mathbf{x} | \mathbf{z}) \rbrace = - \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} P(\mathbf{x}, \mathbf{z}) \log P(\mathbf{x} | \mathbf{z}) \mathrm{d} \mathbf{x} \mathrm{d}\mathbf{z}.
+\end{equation}$$</p>
+<p>It shows the entropy of an n dimensional Gaussian Distribution is
+$$\begin{equation}
+- \frac{1}{2} \log \lbrack (2 \pi e)^n | \mathbf{P} | \rbrack.
+\end{equation}$$</p>
+<p>The entropy is proportional to the log of the determinant of the covariance. The determinant of a matrix is a volume measure (recall that the determinant is the product of the eigenvalues of a matrix and the eigenvalues define axis lengths in n space).</p>
+<h4 id="233-mutual-information">2.3.3 Mutual Information</h4>
+<p>$$\begin{equation}
+I(\mathbf{x}, \mathbf{z}) \triangleq - \mathop{\mathbb{E}} \lbrace \log \frac{P(\mathbf{x}, \mathbf{z})}{P(\mathbf{x}) P(\mathbf{z})} \rbrace.
+\end{equation}$$</p>
+<p>$$\begin{equation}
+I(\mathbf{x}, \mathbf{z}) = H(\mathbf{x}) + H(\mathbf{z}) - H(\mathbf{x}, \mathbf{z}).
+\end{equation}$$</p>
+<p>The process of predicting information gain, making a decision on sensing action, then sensing, is an efficient and effective way of managing sensing resources and of determining optimal sensing policies.</p>
+<h4 id="234-fisher-information">2.3.4 Fisher Information</h4>
+<p>The Fisher information $J(\mathbf{x})$ is defined as the second derivative of the log-likelihood
+$$\begin{equation} J(\mathbf{x}) \triangleq \frac{\mathrm{d^2}}{\mathrm{d}\mathbf{x^2}} \log P(\mathbf{x}).
+\end{equation}$$</p>
+<p>Generally in a matrix form while cross entropy is a scaler.</p>
+<h3 id="24-alternatives-to-probability">2.4 Alternatives to Probability</h3>
+<p>Interval Calculus, Fuzzy logic and Evidential Reasoning is introduced shortly.</p>
+<h2 id="3-multi-sensor-estimation">3 Multi-Sensor Estimation</h2>
+<h3 id="31-the-kalman-filter">3.1 The Kalman Filter</h3>
+<p>With certain assuptions about the observation and process models, the resulting estimate $\dot{\mathbf{x}}(t)$ minimises mean-squared error
+$$\begin{equation}
+L(t) = \int_{-\infty}^{\infty} (\mathbf{x}(t) - \hat{\mathbf{x}}(t))^T (\mathbf{x}(t) - \hat{\mathbf{x}}(t)) P(\mathbf{x}(t) | \mathbf{Z}^t) \mathrm{d} \mathbf{x}.
+\end{equation}$$</p>
+<p>Differentiation of the above equation with respect to $\mathbf{x}(t)$ and setting equal to zero gives
+$$\begin{equation}
+\hat{\mathbf{x}}(t) = \int_{-\infty}^{\infty} \mathbf{x}(t) P(\mathbf{x}(t) | \mathbf{Z}^t) \mathrm{d} \mathbf{x}.
+\end{equation}$$</p>
+<p>which is simply the conditional mean $ \hat{\mathbf{x}}(t) = \mathop{\mathbb{E}}(\mathbf{x}(t) | \mathbf{Z}^t).$</p>
+<p>The Kalman Filter, and indeed any mean-squared-error estimator, computes an estimate which is the conditional mean; an average, rather than a most likely value. (Q: what is the most likely value ?)</p>
+<h4 id="311-state-and-sensor-models">3.1.1 State and Sensor Models</h4>
+<p>This section defineds the notations for Kalman Filter. And shows how the model is discretized.</p>
+<p>The author claimed that it is always best to start with a continuous-time model for the state and then construct a discrete model, rather than stating the discrete model at the outset. This allows for correct identification of noise transfers and noise correlations. ??</p>
+<h4 id="312-the-kalman-filter-algorithm">3.1.2 The Kalman Filter Algorithm</h4>
+<p>Prediction Step:
+$$\begin{equation}
+\hat{\mathbf{x}}(k | k-1) = \mathbf{F}(k) \hat{\mathbf{x}}(k-1 | k-1) + \mathbf{B}(k) \mathbf{u}(k)
+\end{equation}$$
+$$\begin{equation}
+\mathbf{P}(k | k-1) = \mathbf{F}(k) \mathbf{P}(k-1 | k-1) \mathbf{F}^T(k) + \mathbf{G}(k) \mathbf{Q}(k) \mathbf{G}^T(k)
+\end{equation}$$</p>
+<p>Update Step:
+$$\begin{equation}
+v(k) = \mathbf{z}(k) - \mathbf{H}(k) \hat{\mathbf{x}}(k | k-1)
+\end{equation}$$
+$$\begin{equation}
+\mathbf{S}(k) = \mathbf{R}(k) + \mathbf{H}(k) \mathbf{P}(k | k-1) \mathbf{H}^T(k)
+\end{equation}$$
+$$\begin{equation}
+\hat{\mathbf{x}}(k | k) = \hat{\mathbf{x}}(k | k-1) - \mathbf{W}(k) v(k)
+\end{equation}$$
+$$\begin{equation}
+\mathbf{P}(k | k) = \mathbf{P}(k | k-1) - \mathbf{W}(k) \mathbf{S}(k) \mathbf{W}^T(k)
+\end{equation}$$
+$$\begin{equation}
+\mathbf{W}(k) = \mathbf{P}(k | k-1) \mathbf{H}^T(k) \mathbf{S}^{-1}(k)
+\end{equation}$$</p>
+<h4 id="313-the-innovation">3.1.3 The Innovation</h4>
+<p>Because the &rsquo;true&rsquo; states are not usually available for comparison with the estimated states, the innovation is often the only measure of how well the estimator is performing. The most important property of innovation is that they form an orthogonal uncorrelated, white sequence,
+$$\begin{equation}
+\mathop{\mathbb{E}} \lbrace v(k) | \mathbf{Z}^{k-1} \rbrace = 0, \mathop{\mathbb{E}} \lbrace v(i)v^T(jj) \rbrace = \mathbf{S}(i) \delta_{ij}.
+\end{equation}$$</p>
+<p>This can be exploited in monitoring filter performance.</p>
+<h4 id="314-understanding-the-kalman-filter">3.1.4 Understanding the Kalman Filter</h4>
+<p>There are three different, but related ways of thinking about the Kalman filter algorithm</p>
+<ol>
+<li><strong>Weighted average</strong></li>
+</ol>
+<p>Clearly, this interpretation of the Kalman filter holds only for those states which can be written as a linear combination of the observation vector.</p>
+<ol start="2">
+<li>
+<p><strong>Conditional mean</strong></p>
+</li>
+<li>
+<p><strong>Orthogonal decomposition</strong></p>
+</li>
+</ol>
+<h4 id="315-steady-state-filter">3.1.5 Steady State Filter</h4>
+<p>Using the fact that if filtering is synchronous, and state and observation matrics time-invariant, the filter variance will converge quickly, thus $\mathbf{W}$ matrix is also converged, we can skip the computation and use paramatric model to estimate it, reduce the computation greatly.</p>
+<h4 id="316-asynchronous-delayed-and-asequent-observations">3.1.6 Asynchronous, Delayed and Asequent observations</h4>
+<p>Asynchronous means observations from different sensors don&rsquo;t come at the same time, but without delay. Can be addressed by taking time into account, make a prediction at observing time.
+Delayed means some observations is received by the filter with some delay after it is observed. Can be addressed by dropping the current prediction and make a prediction of the observing time of that sensor.
+Asequent means delay from different sensor cause the order of receiving is different from the the order of observations. It cannot be addressed easily unless you keep some observations and recompute the estimation. The author claim this can possibly be solved by a <strong>inverse-covariance filter ??</strong>.</p>
+<h4 id="317-the-extended-kalman-filter">3.1.7 The Extended Kalman Filter</h4>
+<p>Linearization at the estimation point.</p>
+<p>A few comments from the author:</p>
+<ol>
+<li>Jacobians needs to be recomputed every time.</li>
+<li>The model is based on lieanrization at the estimated trajectory, thus if the estimation is not accurate, the second or higher order term cannot be ignored and make it useless. This also requires that initialization should be careful.</li>
+</ol>
+<h3 id="32-the-multi-sensor-kalman-filter">3.2 The Multi-Sensor Kalman Filter</h3>
+<h4 id="321-observation-models">3.2.1 Observation Models</h4>
+<h4 id="322-the-group-sensor-method">3.2.2 The Group-Sensor Method</h4>
+<p>It basiclly stacks all the observations and observation models, treating them as one sensor. The Kalman Filter can be directly applied. The problems is that sensors are assumed to be synchronous and computational complexity of matrix inversion is $\mathbf{O}(n^3)$ as the number of sensors increases.</p>
+<h4 id="323-the-sequential-sensor-method">3.2.3 The Sequential-Sensor Method</h4>
+<p>Treat each observation and observation model independently, make a prediction and update each observation is made. The requires too much predicitons and updates when sensor number increases, though it is linear of the number of sensors. CMU paper <a class="link" href="https://henryzhangzhy.github.io/2019/08/12/a-multi-sensor-fusion-system-for-moving-object-detection-and-tracking-in-urban-driving-environments.html"  target="_blank" rel="noopener"
+    >a multi-sensor fusion system for moving object detection and tracking in urban driving environments</a> applied this method.</p>
+<h4 id="324-the-inverse-covariance-form">3.2.4 The Inverse-Covariance Form</h4>
+<p>This is essentially a information filter, the good side is it simplifies the update step, while the only inversion would be the $P$ matrix, only of the size of states and not related to the number of sensors.</p>
+<h4 id="325-track-to-track-fusion">3.2.5 Track-to-Track Fusion</h4>
+<p>Sensor will do filtering locally and pass the posterior to the center, the center will fuse them together. Method can be covariance-weighted Average.</p>
+<h3 id="33-non-linear-data-fusion-methods">3.3 Non-linear Data Fusion Methods</h3>
+<p>Bayes filter is mentioned. Listed particle-filter and the sum-of-gaussians (gaussian mixture) method.</p>
+<h3 id="34-multi-sensor-data-association">3.4 Multi-Sensor Data Association</h3>
+<p>The idea is to use the nomalized innovation distance.</p>
+<h4 id="341-the-nearest-neighbour-standard-filter">3.4.1 The Nearest-Neighbour Standard Filter</h4>
+<p>Match the closest one, not suitable for highly clustered detections.</p>
+<h4 id="342-the-probabilistic-data-association-filter">3.4.2 The Probabilistic Data Association Filter</h4>
+<p>Keep a mixture of all the observations within a certain range of the prediction to form a combined state and do the prediction again.</p>
+<p>The good thing is you are never wrong, but you are never right as well.</p>
+<h4 id="343-the-multiple-hypothesis-tracking-mht-filter">3.4.3 The Multiple Hypothesis Tracking (MHT) Filter</h4>
+<p>Keep a hypothesis for all observations within certain range. Compute the likelihood and drop protential not good trackings.</p>
+<h4 id="344-data-association-in-track-to-track-fusion">3.4.4 Data Association in Track-to-Track Fusion</h4>
+<p>Weighted average.</p>
+<h4 id="345-maintaining-and-managing-track-files">3.4.5 Maintaining and Managing Track Files</h4>
+<p>Refer to other literature.</p>
+<h2 id="others">Others</h2>
+<p>Section 4 metions about distributed sensor fusion and 5 metions about decision make, which are not of interest here.</p>
+<h1 id="questions">Questions</h1>
+<ol>
+<li>How do we discretize the kalman filter?</li>
+<li>How is $\mathbf{HPH}^T$ a projection?</li>
+<li>How is the gain being computed?</li>
+<li>What are the three interpretation?</li>
+<li>How to use information filter to solve asequent data?</li>
+<li>How to use information filter to solve multi sensor problems?</li>
+<li>How is the steady state filter parameter being choosed?</li>
+<li>What are the difference of the association methods?</li>
+<li>Why $ \mathbf{GQG}^T$ in kalman filter prediction?</li>
+</ol>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/sensor-fusion/">Sensor Fusion</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">Related content</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/probabilistic-semantic-mapping-for-autonomous-driving-applications/">
+        
+        
+            <div class="article-image">
+                <img src="/p/probabilistic-semantic-mapping-for-autonomous-driving-applications/_hu4dd5aea826cb103c15d459d0637191ab_595055_8bd82ac6ff2be2507de99e0db60f268a.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Probabilistic Semantic Mapping for Autonomous Driving Applications"
+                        
+                        data-hash="md5-EGrnfEfBD2KwTB2WAGY3Aw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Probabilistic Semantic Mapping for Autonomous Driving Applications</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/a-multi-sensor-fusion-system-for-object-detection-and-tracking/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">A Multi Sensor Fusion System for Object Detection and Tracking</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/sensor-fusion-for-autonomous-vehicles/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Sensor Fusion for Autonomous Vehicles</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/sensors-for-autonomous-vehicles/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Sensors for Autonomous Vehicles</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "https-zhyhenryzhang-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2024 Hengyuan Zhang
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.24.2">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

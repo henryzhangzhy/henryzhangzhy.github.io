@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Categories on Hengyuan Zhang</title>
+        <link>http://localhost:1313/categories/</link>
+        <description>Recent content in Categories on Hengyuan Zhang</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en</language>
+        <copyright>Hengyuan Zhang</copyright>
+        <lastBuildDate>Mon, 23 Mar 2020 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Autonomous Vehicles</title>
+        <link>http://localhost:1313/categories/autonomous-vehicles/</link>
+        <pubDate>Mon, 23 Mar 2020 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/categories/autonomous-vehicles/</guid>
+        <description>&lt;img src="http://localhost:1313/categories/autonomous-vehicles/hutomo-abrianto-l2jk-uxb1BY-unsplash.jpg" alt="Featured image of post Autonomous Vehicles" /&gt;</description>
+        </item>
+        <item>
+        <title>Geek</title>
+        <link>http://localhost:1313/categories/geek/</link>
+        <pubDate>Fri, 09 Aug 2019 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/categories/geek/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Journey</title>
+        <link>http://localhost:1313/categories/journey/</link>
+        <pubDate>Thu, 08 Aug 2019 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/categories/journey/</guid>
+        <description></description>
+        </item>
+        
+    </channel>
+</rss>

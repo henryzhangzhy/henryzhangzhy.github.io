@@ -1,0 +1,863 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Hengyuan Zhang</title>
+        <link>http://localhost:1313/</link>
+        <description>Recent content on Hengyuan Zhang</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en</language>
+        <copyright>Hengyuan Zhang</copyright>
+        <lastBuildDate>Fri, 31 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>About</title>
+        <link>http://localhost:1313/about/</link>
+        <pubDate>Fri, 31 Mar 2023 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/about/</guid>
+        <description>&lt;h2 id=&#34;about-me&#34;&gt;About Me&lt;/h2&gt;
+&lt;p&gt;Hengyuan Zhang is a Ph.D. student at the CSE Department of UCSD. He is a member of the &lt;a class=&#34;link&#34; href=&#34;http://avl.ucsd.edu/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Autonomous Vehicle Laboratory&lt;/a&gt; with &lt;a class=&#34;link&#34; href=&#34;http://www.hichristensen.net/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Prof. Henrik I. Christensen&lt;/a&gt;. He earned his master’s degree in Intelligent Systems, Robotics and Control at the ECE Department of UCSD and Bachelor’s degree in Automation at Nanjing University. His research is in online mapping and sensor fusion in Autonomous Driving. He is part of the founding team in the Autonomous Vehicle Lab and has worked on semantic mapping, online mapping, LiDAR based detection, tracking and lidar-camera fusion for object tracking at AVL. He is excited about using robotics technologies to make human lives better.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;homepage-thanks-to-hugo&#34;&gt;Homepage Thanks to Hugo&lt;/h2&gt;
+&lt;p&gt;Written in Go, Hugo is an open source static site generator available under the &lt;a class=&#34;link&#34; href=&#34;https://github.com/gohugoio/hugo/blob/master/LICENSE&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Apache License 2.0.&lt;/a&gt; Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content files and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification and support for Sass SCSS workflows.&lt;/p&gt;
+&lt;p&gt;Hugo makes use of a variety of open source projects including:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/yuin/goldmark&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/yuin/goldmark&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/alecthomas/chroma&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/alecthomas/chroma&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/muesli/smartcrop&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/muesli/smartcrop&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/spf13/cobra&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/spf13/cobra&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/spf13/viper&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/spf13/viper&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Hugo is ideal for blogs, corporate websites, creative portfolios, online magazines, single page applications or even a website with thousands of pages.&lt;/p&gt;
+&lt;p&gt;Hugo is for people who want to hand code their own website without worrying about setting up complicated runtimes, dependencies and databases.&lt;/p&gt;
+&lt;p&gt;Websites built with Hugo are extremely fast, secure and can be deployed anywhere including, AWS, GitHub Pages, Heroku, Netlify and any other hosting provider.&lt;/p&gt;
+&lt;p&gt;Learn more and contribute on &lt;a class=&#34;link&#34; href=&#34;https://github.com/gohugoio&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Probabilistic Semantic Mapping for Autonomous Driving Applications</title>
+        <link>http://localhost:1313/p/probabilistic-semantic-mapping-for-autonomous-driving-applications/</link>
+        <pubDate>Mon, 23 Mar 2020 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/probabilistic-semantic-mapping-for-autonomous-driving-applications/</guid>
+        <description>&lt;img src="http://localhost:1313/p/probabilistic-semantic-mapping-for-autonomous-driving-applications/semantic_map_2020_zoom.png" alt="Featured image of post Probabilistic Semantic Mapping for Autonomous Driving Applications" /&gt;&lt;p&gt;This is a work we submitted to IROS2020, co-authored by David Paz, Qinru Li, and Hao Xiang. We applied state-of-the-art semantic segmentation network to build a local map with semantic information such as roads, lanes and crosswalks based on vision and lidar data.&lt;/p&gt;
+&lt;h2 id=&#34;motivation&#34;&gt;Motivation&lt;/h2&gt;
+&lt;p&gt;Autonomous driving today still strongly rely on high-definition maps, which often encodes the road, lane, traffic light, crosswalk information and so forth. High-definition map often requires large amount of human labeling. Part of the time-consuming step is to extract the semantic information [1]. Thus our work aims at moving a step closer to HD map automation by automatic semantic annotation.&lt;/p&gt;
+&lt;h2 id=&#34;method&#34;&gt;Method&lt;/h2&gt;
+&lt;h3 id=&#34;semantic-segmentation&#34;&gt;Semantic Segmentation&lt;/h3&gt;
+&lt;p&gt;A network trained with DeepLabV3Plus [2] architecture on the Mapillary Vistas dataset [3]. The network trained with publicly available dataset achieves great generalization. We directly applied it to our scenario without fine-tuning.&lt;/p&gt;
+&lt;h3 id=&#34;semantic-association&#34;&gt;Semantic Association&lt;/h3&gt;
+&lt;p&gt;How to associate the semantic labels in 2D image with the map? Methods assuming a flat road and fixed camera are subject to nosie. Since our vehicle is localized with respect to the local point cloud map, we project a segment of the map into the image and retrieve the semantic labels.&lt;/p&gt;
+&lt;h3 id=&#34;semantic-mapping&#34;&gt;Semantic Mapping&lt;/h3&gt;
+&lt;p&gt;The local point cloud with semnatic label is good at visualization, but not for information retrieval. Also, it is hard to maintain temporal consistency on the point cloud map. Instead, we use a probabilistic map to reprensent the local information. for each cell, we encode the log odds of the cell being each class. For each semantic point cloud, we project the semantic label on the map cell and update the corresponding log odds.&lt;/p&gt;
+&lt;h2 id=&#34;experiments&#34;&gt;Experiments&lt;/h2&gt;
+&lt;p&gt;See &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2006.04894&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;observations&#34;&gt;Observations&lt;/h2&gt;
+&lt;p&gt;Semantic segmentation network trained on publicly available dataset generalized well. It performs better for close range. For this architecture on our image, the speed is about 4fps. It is the bottle neck of the entire system. Mapping runs super fast, often within 0.05s.
+Probabilistic map is very robust to noise. Although semantic segmentation make mistakes when the objects are far away, it will correct it overtime.&lt;/p&gt;
+&lt;h2 id=&#34;reference&#34;&gt;Reference&lt;/h2&gt;
+&lt;p&gt;[1] J. Jiao. Machine learning assisted high-definition map creation. In 2018 IEEE 42nd Annual Computer Software and Applications Conference (COMPSAC), volume 01, pages 367–373, July 2018.&lt;/p&gt;
+&lt;p&gt;[2] Liang-Chieh Chen, Yukun Zhu, George Papandreou, Florian Schroff, and Hartwig Adam. Encoder-decoder with atrous separable convolution for semantic image segmentation. Lecture Notes in Computer Science, page 833–851, 2018.&lt;/p&gt;
+&lt;p&gt;[3] Gerhard Neuhold, Tobias Ollmann, Samuel Rota Bulò, and Peter Kontschieder. The mapillary vistas dataset for semantic understanding of street scenes. In International Conference on Computer Vision (ICCV), 2017.&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>A Multi Sensor Fusion System for Object Detection and Tracking</title>
+        <link>http://localhost:1313/p/a-multi-sensor-fusion-system-for-object-detection-and-tracking/</link>
+        <pubDate>Mon, 12 Aug 2019 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/a-multi-sensor-fusion-system-for-object-detection-and-tracking/</guid>
+        <description>&lt;p&gt;A paper on sensor fusion system using EKF to fuse LIDARs, raders and cameras.&lt;/p&gt;
+&lt;p&gt;This paper presents a two-layer fusion system. A sensor layer processes the raw sensor data and generates features and then generates proposals based on the features, partly across multiple sensors. The fusion layer fuses the sensor measurements using an Extended Kalman Fileter (EKF). Where measurements from all sensors are processed sequentially and asynchronously. Measurements are associated with the tracked objects based on their type. Each type of measuremnt has its own measurement model for update the associated object.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;sensor-setup&#34;&gt;Sensor Setup&lt;/h2&gt;
+&lt;p&gt;The platform introduced in this work use 6 LIDAR and radar pairs and three cameras for perception.&lt;/p&gt;
+&lt;p&gt;LIDARs are 4-layer LIDAR with range up to 200m.
+Radar1 has a max range of 250m and radar2 can be configured to 60m or 175m.
+Two cameras, one in the front, one in the back have a resolution of 640*480.
+The third camera is a thermal camera.&lt;/p&gt;
+&lt;p&gt;Any object within 200 meters will be projected onto sensor converge and within 60 meters will be seen by at least two different types of sensors.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;sensor-layer&#34;&gt;Sensor Layer&lt;/h2&gt;
+&lt;p&gt;The sensor layer is made of sensor-specific modules. Each module takes the raw data and uses sensor-specific algorithms to generate high level features. And object proposals will be generated from these features.&lt;/p&gt;
+&lt;p&gt;For radars, we can get 2D position and direct measuremnt of the speed of the target. The measurement at time $k$ would be represented as&lt;/p&gt;
+&lt;p&gt;$z^R(k) = {r_1, r_2, &amp;hellip;, r_p},$&lt;/p&gt;
+&lt;p&gt;where $r_i = [x, y, dx, dy]^\top, i = 1, 2, &amp;hellip;, p.$&lt;/p&gt;
+&lt;p&gt;All six LIDARs are treated as one homogeneous sensor. Analyzing their measurements using built-in segmentation and extract features line segments or junctions of lines (&amp;ldquo;L&amp;rdquo;) shape [2]. we can get pose in 3D and size (partially)&lt;/p&gt;
+&lt;p&gt;$z^L(k) = {l_1, l_2, &amp;hellip;, l_q},$&lt;/p&gt;
+&lt;p&gt;where $l_i = [x, y, \theta, dx, dy, w, l]^\top, i = 1, 2, &amp;hellip;, q.$&lt;/p&gt;
+&lt;p&gt;For cameras, we can get the bounding box in the image frame and a class label.&lt;/p&gt;
+&lt;p&gt;$z^C(k) = {c_1, c_2, &amp;hellip;, c_r},$&lt;/p&gt;
+&lt;p&gt;where $c_i = [x_1, y_1, x_2, y_2, class]^\top, i = 1, 2, &amp;hellip;, r$.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;fusion-layer&#34;&gt;Fusion Layer&lt;/h2&gt;
+&lt;p&gt;The fusion of multiple sensor measurements employ the sequential-sensor method. Which treats observations from individual sensors idnependently and sequentially feeds them to the EKF&amp;rsquo;s estimation process.&lt;/p&gt;
+&lt;h3 id=&#34;tracking-models&#34;&gt;Tracking Models&lt;/h3&gt;
+&lt;h4 id=&#34;motion-models&#34;&gt;Motion Models&lt;/h4&gt;
+&lt;p&gt;A point model and a 3D box model is used for motion prediction. A point model is effective in localizing objects that are far away and we don&amp;rsquo;t care about its shape and orientation. A 3D model is effective for objects that are near the vehicle and provides oritentaion and shape estimation.&lt;/p&gt;
+&lt;p&gt;Here the point model is a constant acceleration model in 2D:&lt;/p&gt;
+&lt;p&gt;$x(k) = [x, y ,v_x ,v_y, a_x, a_y]^\top$.&lt;/p&gt;
+&lt;p&gt;and the box model is represented by:&lt;/p&gt;
+&lt;p&gt;$x(k) = [x, y, \theta, v, \omega, a, w, l, h]^\top$.&lt;/p&gt;
+&lt;p&gt;where $\theta$ is yaw angle, $\omega$ is yaw rate, $w$ is width, $l$ is length, $h$ is height.&lt;/p&gt;
+&lt;p&gt;For more on motion model, [4] is a previous work on this.&lt;/p&gt;
+&lt;h4 id=&#34;observation-models&#34;&gt;Observation Models&lt;/h4&gt;
+&lt;p&gt;Observations from sensors will be associated with corresponding objects, then observation model is applied to update the state estimation. Data association will be introduced in the next section. If an observation is not associated with any esisting object, object instantiation should happen.&lt;/p&gt;
+&lt;p&gt;We have observations from three sensors, they provide different information about the model. And we have both point model and box model. If we have corresponding update for all possibilities, we will have six observation models.&lt;/p&gt;
+&lt;p&gt;But notice that radar cannot update the box target, it only update the point target.&lt;/p&gt;
+&lt;p&gt;LIDAR measurements are primarily used for update the box target, it also can bu used to update the point target.&lt;/p&gt;
+&lt;p&gt;Camera measurements cannot be used for position estimation due to poor depth estimation. Thus it is only applied to the box model for update the width and height.&lt;/p&gt;
+&lt;p&gt;Details about the update step are not list in this post currently.&lt;/p&gt;
+&lt;h3 id=&#34;data-association&#34;&gt;Data Association&lt;/h3&gt;
+&lt;p&gt;Measurement data is sequentially sent to the EKF, thus the association process will handle one measurement to all objects. My interpretation is that a prediction step for all objects should happen before association. The association of prediction and measurement is sensor dependent.&lt;/p&gt;
+&lt;p&gt;For LIDAR meansurements, association of point model is based on distance of prediction and measurment. For box models, possible interpretations of the edge target is generated and interpretations with max overlap with predicted object is selected. This in pratice occasionally fails thus vision target is utilized here. When vision target give higher reponse on a particular view of a vehicle (eg. back view), we can filter interpretations of other views (eg. side view).&lt;/p&gt;
+&lt;p&gt;Association of camera measurements is achieved by projecting the prediction of the point model or box model into the pinhole camera model and compute the distance to the midpoint of the bottom line of the detected bounding box. The object whose point is the nearest neighbbor is associated.&lt;/p&gt;
+&lt;p&gt;For association of radar measurements, a set of possible point targets are generated from predected model. Specifically, several points along the contour is generated for a box model and one point for a point model. The enhancement for a box model using multiple points is due to poor lateral position estimation from radar. Association is made by the nearest-neighbor approach.&lt;/p&gt;
+&lt;h3 id=&#34;movement-classifications&#34;&gt;Movement Classifications&lt;/h3&gt;
+&lt;p&gt;Movement Classification is hard for LIDAR detection cause shape changes when the car is driving and the center is hard to estimate. I had a headache with this when I was doing shape estimation. This method is definitely worth trying.&lt;/p&gt;
+&lt;p&gt;Two flags are set for movement classification same as [4].&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;the &lt;strong&gt;movement history flag&lt;/strong&gt; is raised when the tracking system determines that the position of a tracked object has significantly changed. The distance traveled is computed from the last time stamp that the object has been classified as not observed moving. Emprically determined thresholds for pedestrians, vehicles and cyclists are used to compare with the distance.&lt;/li&gt;
+&lt;li&gt;the &lt;strong&gt;movement state flag&lt;/strong&gt; is raised when the tracking system determines that the object is moving. Radars provide the directly estimation of moving state while LIDAR can estimate the speed over time.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;comments&#34;&gt;Comments&lt;/h3&gt;
+&lt;p&gt;Result shown 93.7% by human inspection with 5.7 false positives per minute. Not sure what this exactly means.&lt;/p&gt;
+&lt;p&gt;I think this is a very clear paper about sensor fusion. I like the proposed system.&lt;/p&gt;
+&lt;h3 id=&#34;reference&#34;&gt;Reference&lt;/h3&gt;
+&lt;p&gt;[1]  Cho, Hyunggi, et al. A multi-sensor fusion system for moving object detection and tracking in urban driving environments. &lt;em&gt;Robotics and Automation (ICRA), 2014 IEEE International Conference on. IEEE&lt;/em&gt;, 2014.&lt;/p&gt;
+&lt;p&gt;[2] C. Mertz et al. Moving Object Detection with Laser Scanners. &lt;em&gt;Journal of Field Robotics&lt;/em&gt;, 30(1):17-43, 2013.&lt;/p&gt;
+&lt;p&gt;[3] H. Durrant-Whyte. &lt;em&gt;Multi Sensor Data Fusion&lt;/em&gt;. Lecture Notes, 2006.&lt;/p&gt;
+&lt;p&gt;[4] M. S. Darms, P. Rybski, C. Baker, and C. Urmson. Obstacle detection and tracking for the urban challenge. &lt;em&gt;IEEE Transaction on Intelligent Transportation Systems&lt;/em&gt;, 10(3), 2009.&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Sensor Fusion for Autonomous Vehicles</title>
+        <link>http://localhost:1313/p/sensor-fusion-for-autonomous-vehicles/</link>
+        <pubDate>Mon, 12 Aug 2019 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/sensor-fusion-for-autonomous-vehicles/</guid>
+        <description>&lt;p&gt;Explore sensor fusion methods. Index page of findings in this area.&lt;/p&gt;
+&lt;p&gt;Sensor fusion is to extract the information from heterogeneous sensors that complement each other. For the sensors that are commonly used in Autonomous Vehicles, like LIDARs, radars and cameras, this is obvious.&lt;/p&gt;
+&lt;p&gt;Cameras are rich in texture and semantic information, like color, material, and signs. But they are poor at depth estimation. LIDARs can provide accurate depth information, using 3d point clouds, but everything is just a point cloud with a 3D position and a reflection rate. You cannnot distinguish a red light and a green light. radars can directly provide speed estimation, which is usually better than estimating using LIDARs[1].&lt;/p&gt;
+&lt;p&gt;Recent advances in Autonomous Vehicles are highly dependent on sensor fusion. And companies like Waymo, Lyft, Zoox are using multi-sensor settings on their car. While research in single modal perception has a lot of advances, like deep-learning based visual recognition, new representation for point cloud learning, the fusion of them is unclear to me. This area is not much introduced in class and I feel like I need to invest some time on figuring out the big picture in this area by reading literatures.&lt;/p&gt;
+&lt;p&gt;I would divide the sensor fusion systems into several categories and talk about them. It includes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;mathematical modeling methods&lt;/li&gt;
+&lt;li&gt;deep learning methods&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;mathematical-modeling-methods&#34;&gt;Mathematical Modeling Methods&lt;/h2&gt;
+&lt;h3 id=&#34;a-multi-sensor-fusion-system-for-moving-object-detection-and-tracking-in-urban-driving-environmentshttpshenryzhangzhygithubio20190812a-multi-sensor-fusion-system-for-moving-object-detection-and-tracking-in-urban-driving-environmentshtml&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;https://henryzhangzhy.github.io/2019/08/12/a-multi-sensor-fusion-system-for-moving-object-detection-and-tracking-in-urban-driving-environments.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;A Multi-Sensor Fusion System for Moving Object Detection and Tracking in Urban Driving Environments&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;This paper presents a two-layer fusion system. A sensor layer processes the raw sensor data and generates features and then generates proposals based on the features, partly across multiple sensors. The fusion layer fuses the sensor measurements using an Extended Kalman Fileter (EKF). Where measurements from all sensors are processed sequentially and asynchronously. Measurements are associated with the tracked objects based on their type. Each type of measuremnt has its own measurement model for update the associated object.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;deep-learning-methods&#34;&gt;Deep Learning methods&lt;/h2&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;reference&#34;&gt;Reference&lt;/h3&gt;
+&lt;p&gt;[1]  Cho, Hyunggi, et al. ”A multi-sensor fusion system for moving object detection and tracking in urban driving environments.” Robotics and Automation (ICRA), 2014 IEEE International Conference on. IEEE, 2014.&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Sensors for Autonomous Vehicles</title>
+        <link>http://localhost:1313/p/sensors-for-autonomous-vehicles/</link>
+        <pubDate>Mon, 12 Aug 2019 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/sensors-for-autonomous-vehicles/</guid>
+        <description>&lt;p&gt;Reference page of sensor characteristics.&lt;/p&gt;
+&lt;p&gt;Inevitably, we need to talk about sensor characteristics when discussing about sensor fusion. I don&amp;rsquo;t want to repeat them too much when I am writing posts about sensor fusion. And it would be interesting to see how people think of sensors generally. So all discussion about sensors will go here.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;sensor-characteristics&#34;&gt;Sensor Characteristics&lt;/h2&gt;
+&lt;h3 id=&#34;lidar&#34;&gt;LIDAR&lt;/h3&gt;
+&lt;h3 id=&#34;camera&#34;&gt;Camera&lt;/h3&gt;
+&lt;h3 id=&#34;radar&#34;&gt;Radar&lt;/h3&gt;
+&lt;h3 id=&#34;ultra-sonic&#34;&gt;ultra-sonic&lt;/h3&gt;
+&lt;h3 id=&#34;kinect&#34;&gt;kinect&lt;/h3&gt;
+&lt;p&gt;For Autonomous Vehicle? I am kidding.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;sensor-comparison&#34;&gt;Sensor comparison&lt;/h2&gt;
+</description>
+        </item>
+        <item>
+        <title>Markdown Reference</title>
+        <link>http://localhost:1313/p/markdown-reference/</link>
+        <pubDate>Fri, 09 Aug 2019 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/markdown-reference/</guid>
+        <description>&lt;p&gt;A reference for markdown language.&lt;/p&gt;
+&lt;p&gt;structure&lt;/p&gt;
+&lt;h1 id=&#34;title-&#34;&gt;title #&lt;/h1&gt;
+&lt;h2 id=&#34;second-level-title-&#34;&gt;second level title ##&lt;/h2&gt;
+&lt;h3 id=&#34;list&#34;&gt;list&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;a &amp;lsquo;-&amp;rsquo; followed by a space&lt;/li&gt;
+&lt;li&gt;a &amp;lsquo;-&amp;rsquo; another one&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;numbered list&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;actual number doesn&amp;rsquo;t matter, just a number&lt;/p&gt;
+&lt;p&gt;properly indented paragraph, with blank line and space.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;another sublist&lt;/li&gt;
+&lt;li&gt;here&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;* works for unordered lists&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;+ works the same&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;- as well&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;checked box&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; unchecked&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; checked&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;format&#34;&gt;format&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;emphasis&lt;/em&gt;: _emphasis_ or *emphasis*&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;strong emphasis&lt;/strong&gt;: __strong emphasis__ or **strong emphasis**&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;combined &lt;em&gt;emphasis&lt;/em&gt;&lt;/strong&gt;: **combined _emphasis_**&lt;/li&gt;
+&lt;li&gt;&lt;del&gt;strike through&lt;/del&gt;: ~~strike through~~&lt;/li&gt;
+&lt;li&gt;a new line in editor will result in no line break in the markdown display.&lt;/li&gt;
+&lt;li&gt;insert an empty to get a new paragraph&lt;/li&gt;
+&lt;li&gt;add &amp;lt;br/&amp;gt; to the end of the line to get a new line. a single back slash \ works for markdown but not generated website and double backslashes \\ works for a website but not markdown. Double space works for both but is not recommanded as editors sometimes delete them while saving.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;code&#34;&gt;code&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;`inline code` &lt;code&gt;inline code&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;```python&lt;/p&gt;
+&lt;p&gt;code block&lt;/p&gt;
+&lt;p&gt;```&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;square&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;x&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;range&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;square&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;x&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;range&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;square&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;append&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;**&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;//&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;indent&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;requires&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;four&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;spaces&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;links&#34;&gt;links&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.google.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Google&lt;/a&gt;: [Google](https://www.google.com)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.google.com&#34;  title=&#34;Google Homepage&#34;
+     target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Google&lt;/a&gt;: [Google](https://www.google.com &amp;quot;Google Homepage&amp;quot;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.reddit.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;reference style&lt;/a&gt;: [reference style][reference]&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;URLs and URLs in angle brackets will automatically get turned into links.
+&lt;a class=&#34;link&#34; href=&#34;http://www.example.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;http://www.example.com&lt;/a&gt; or &lt;a class=&#34;link&#34; href=&#34;http://www.example.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;http://www.example.com&lt;/a&gt; and sometimes
+example.com (but not on Github, for example).&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;[reference]: &lt;a class=&#34;link&#34; href=&#34;https://www.reddit.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.reddit.com&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Inline-style:
+&lt;img src=&#34;https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;alt text&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Reference-style:
+&lt;img src=&#34;https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;alt text&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Github images&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;![Single Tracking](/assets/images/single_object_tracking_1.png)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;The format is ! [Alt Text] (link to image)&lt;/p&gt;
+&lt;p&gt;![Single_Tracking]({{ site.url }}/assets/images/single_object_tracking_1.png)
+img[alt=Single_Tracking] { width: 20px; }&lt;/p&gt;
+&lt;p&gt;If you want to change the size, use html&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-HTML&#34; data-lang=&#34;HTML&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;img&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;src&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;{{ site.url }}/assets/images/single_object_tracking_1.png&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;alt&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;drawing&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;width&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;500&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;img src=&#34;{{ site.url }}/assets/images/single_object_tracking_1.png&#34; alt=&#34;drawing&#34; width=&#34;500&#34;/&gt;
+&lt;h3 id=&#34;block-quate&#34;&gt;Block Quate&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;blockquote&gt;
+&lt;p&gt;block quate
+continue&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Quote break&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;anther quaote that is very long long long long long long long long long long long long long long.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;reference&#34;&gt;Reference&lt;/h3&gt;
+&lt;p&gt;Adapted from
+&lt;a class=&#34;link&#34; href=&#34;https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Markdown Cheatsheet&lt;/a&gt; by &lt;a class=&#34;link&#34; href=&#34;https://github.com/adam-p&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;adam-p&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Licence: &lt;a class=&#34;link&#34; href=&#34;https://creativecommons.org/licenses/by/3.0/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;CC-BY&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Guide to make personal website using Github Pages and Jekyll</title>
+        <link>http://localhost:1313/p/guide-to-make-personal-website-using-github-pages-and-jekyll/</link>
+        <pubDate>Thu, 08 Aug 2019 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/guide-to-make-personal-website-using-github-pages-and-jekyll/</guid>
+        <description>&lt;p&gt;This is a guide to help you setup your personal website using Github Pages and jekyll.&lt;/p&gt;
+&lt;p&gt;What do you need for a personal website?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;some webpages.&lt;/li&gt;
+&lt;li&gt;a server.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Webpages are some HTML that defines the content of your website.&lt;/p&gt;
+&lt;p&gt;A server will host your website so that anybody can get access to it through the internet.&lt;/p&gt;
+&lt;p&gt;Github Pages allow you create a repository with the name of your accountname.github.io, if you put some HTML files on that repository and push it to github. It will generate your website for you, &lt;strong&gt;for free&lt;/strong&gt;!&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;1-setup-github-pages&#34;&gt;1. setup Github Pages&lt;/h3&gt;
+&lt;p&gt;Following content will tell you how to setup Github Pages (the server side) and create a simple HTML page. The content are directly copied from &lt;a class=&#34;link&#34; href=&#34;https://pages.github.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Github Pages&lt;/a&gt;[1]&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Head over to GitHub and create a new repository named username.github.io, where username is your username (or organization name) on GitHub.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Go to the folder where you want to store your project, and clone the new repository.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git clone https://github.com/username/username.github.io
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Enter the project folder and add an index.html file.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; username.github.io
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Hello World&amp;#34;&lt;/span&gt; &amp;gt; index.html
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add, commit, and push your changes:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git add --all
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git commit -m &lt;span class=&#34;s2&#34;&gt;&amp;#34;Initial commit&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git push -u origin master
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Fire up a browser and go to &lt;a class=&#34;link&#34; href=&#34;https://username.github.io&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://username.github.io&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Actually, be patient as there might be a delay : )&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;2-build-your-local-website&#34;&gt;2. build your local website&lt;/h3&gt;
+&lt;p&gt;Now, you should be able to see you website hosted by github. The next step is to create your website pages  and setup you blog.&lt;/p&gt;
+&lt;p&gt;What do you need for your webpages?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;HTML for web content&lt;/li&gt;
+&lt;li&gt;CSS for style, like layout and formatting.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Jekyll is a powerful tool in a sense that you don&amp;rsquo;t need to know much about HTML or CSS for your website. It&amp;rsquo;s default theme will work fine for the style. And the cool part is that you can write webpages in Markdown. Jekyll will generate the HTML for you.&lt;/p&gt;
+&lt;p&gt;I would recommand you go through the &lt;a class=&#34;link&#34; href=&#34;https://jekyllrb.com/docs/installation/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;install guide&lt;/a&gt; and &lt;a class=&#34;link&#34; href=&#34;https://jekyllrb.com/docs/step-by-step/01-setup&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;jekyll tutorial&lt;/a&gt;[1] for a step by step setup. I will list a few keypoints here for your reference.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;install the environment for jekyll.&lt;/p&gt;
+&lt;p&gt;install Ruby &amp;gt;= 2.4 follow &lt;a class=&#34;link&#34; href=&#34;https://jekyllrb.com/docs/installation/ubuntu/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;the guide for ubuntu&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;note that Ubuntu user might need to add repository&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt-add-repository ppa:brightbox/ruby-ng
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt-get update
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;go through the tutorial to setup your website.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://jekyllrb.com/docs/ruby-101/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Ruby 101&lt;/a&gt; will give you an idea what it can do. You can follow this quick demo to get a template website with just a few lines of commands.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;After seeing the pattern at &lt;a class=&#34;link&#34; href=&#34;https://jekyllrb.com/docs/ruby-101/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Ruby 101&lt;/a&gt;, you can start to build your own website. Go to your local clone of your website repository, follow the &lt;a class=&#34;link&#34; href=&#34;https://jekyllrb.com/docs/step-by-step/01-setup/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;step by step tutorial&lt;/a&gt; to setup your website.&lt;/p&gt;
+&lt;p&gt;It major contain the following contents&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;create a simple site&lt;/li&gt;
+&lt;li&gt;adding a few pages&lt;/li&gt;
+&lt;li&gt;make a navigation bar for all pages&lt;/li&gt;
+&lt;li&gt;adding style&lt;/li&gt;
+&lt;li&gt;adding blogs&lt;/li&gt;
+&lt;li&gt;organizing blogs by author (I did this by topic)&lt;/li&gt;
+&lt;li&gt;deploy your website&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A few comments would be.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;you can choose some &lt;a class=&#34;link&#34; href=&#34;https://github.com/pages-themes&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;nice themes&lt;/a&gt;, and even change them, check the github pages for the theme for more information.&lt;/li&gt;
+&lt;li&gt;for each file you generated in this repo, look for their corresponding file in &lt;a class=&#34;link&#34; href=&#34;https://jekyllrb.com/docs/ruby-101/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Ruby 101&lt;/a&gt;, you may copy some of the contents (__config.yml, Gemfile) and try to understand them.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;3-adding-comments-to-your-posts&#34;&gt;3. adding comments to your posts&lt;/h3&gt;
+&lt;p&gt;I think allowing interaction would be important for feedback, thus this part is added. If you definitely want to find the best solution for you, check this post for reference. &lt;a class=&#34;link&#34; href=&#34;https://darekkay.com/blog/static-site-comments/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;A post about different methods of hosting comments&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I pick the easiest one, using Disqus.&lt;/p&gt;
+&lt;p&gt;Here are the steps:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;go to register an account in Disqus.&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://disqus.com/admin/create/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;accociate your website shortname&lt;/a&gt; with your account, notice that this step cannot be changed once set.&lt;/li&gt;
+&lt;li&gt;add templates to your website
+&lt;ul&gt;
+&lt;li&gt;choose Jekyll as your platform.&lt;/li&gt;
+&lt;li&gt;copy the Embedded code to &amp;ldquo;comments.html&amp;rdquo; in your _includes folder. You might want to uncomment some field here, check &lt;a class=&#34;link&#34; href=&#34;https://desiredpersona.com/disqus-comments-jekyll/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;this post&lt;/a&gt; for reference, it use &amp;lsquo;{{ page.url absolute_url }}&amp;rsquo; for both PAGE_URL and PAGE_IDENTIFIER.&lt;/li&gt;
+&lt;li&gt;add {% raw %} {% include comments.html %} {% endraw %} to your _layouts/post.html&lt;/li&gt;
+&lt;li&gt;wrap the include statement with {% raw %} {% if page.comments %} &amp;hellip; {$ endif %} {% endraw %} so that you can decide if you want comments in each post by setting comments: true or comments: false.&lt;/li&gt;
+&lt;li&gt;you can hide your comment by default, which make it load faster. Check out &lt;a class=&#34;link&#34; href=&#34;https://esc.sh/blog/load-disqus-on-click/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;this post&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;add a field in your post header &amp;ldquo;comments: true&amp;rdquo; to the posts you want the comments.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;up to this step, your localhost should display comments correctly, but not remote. You need to
+&lt;ul&gt;
+&lt;li&gt;edit _config.yml
+&lt;ul&gt;
+&lt;li&gt;edit&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yml&#34; data-lang=&#34;yml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;url&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;https://yourgithubname.github.io&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;add&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yml&#34; data-lang=&#34;yml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;disqus&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;shortname&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;https-zhyhenryzhang-github-io&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;make sure your comments.html file include correct link
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;s.src = &amp;#39;//&amp;#39; + short_name + ...
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;if you start with
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;s.src = &amp;#39;https://&amp;#39; + ...
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;It might not load.&lt;/li&gt;
+&lt;li&gt;a few links that you can refer to
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/jekyll/minima&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;minima README.md&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://stackoverflow.com/questions/41613661/we-were-unable-to-load-disqus-with-jekylls-default-minima-theme&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;a discussion&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;local is able to display cause JEKYLL_ENV = development and Github Pages use production by default. So if you set local to production, you will get the same result.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;4-latex-support&#34;&gt;4. LaTeX support&lt;/h3&gt;
+&lt;p&gt;Important and extremely simple! Add a few scripts to your _layout/post.html or default.html.
+Then you can add contents like $e=mc^2$ in \[ \LaTeX. \]
+You can get the script from &lt;a class=&#34;link&#34; href=&#34;http://zjuwhw.github.io/2017/06/04/MathJax.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;blog1&lt;/a&gt; and &lt;a class=&#34;link&#34; href=&#34;http://blog.lostinmyterminal.com/webpages/2015/01/09/math-support-in-jekyll.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;blog2&lt;/a&gt;.
+Check &lt;a class=&#34;link&#34; href=&#34;http://docs.mathjax.org/en/latest/tex.html#l&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;MathJax documentation&lt;/a&gt; for reference. Note that official document mentioned that this is a limited LaTeX support.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;5-next-step&#34;&gt;5. next step&lt;/h3&gt;
+&lt;p&gt;You have already had a nice website here, the most important thing should be blogging, to organize your knowledge and contribute to the community.&lt;/p&gt;
+&lt;p&gt;But there are a few things you can do also.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;update you github profile with you website.&lt;/li&gt;
+&lt;li&gt;link your github page to the website.&lt;/li&gt;
+&lt;li&gt;try out some &lt;a class=&#34;link&#34; href=&#34;https://github.com/pages-themes&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;nice themes&lt;/a&gt; offered by jekyll. &lt;a class=&#34;link&#34; href=&#34;https://github.com/pages-themes/hacker&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Hacker&lt;/a&gt; is the one I am using, which is dark for eye care :p&lt;/li&gt;
+&lt;li&gt;blogging and more.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;reference&#34;&gt;Reference:&lt;/h3&gt;
+&lt;p&gt;[1] &lt;a class=&#34;link&#34; href=&#34;https://pages.github.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://pages.github.com&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[2] &lt;a class=&#34;link&#34; href=&#34;https://jekyllrb.com/docs/step-by-step/01-setup&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://jekyllrb.com/docs/step-by-step/01-setup&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[3] &lt;a class=&#34;link&#34; href=&#34;https://github.com/pages-themes/hacker&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/pages-themes/hacker&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Multi-sensor Data Fusion Hugh Durrant Whyte</title>
+        <link>http://localhost:1313/p/multi-sensor-data-fusion-hugh-durrant-whyte/</link>
+        <pubDate>Thu, 08 Aug 2019 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/multi-sensor-data-fusion-hugh-durrant-whyte/</guid>
+        <description>&lt;p&gt;Notes on &lt;em&gt;Multi Sensor Data Fusion&lt;/em&gt; from Hugh Durrant Whyte.&lt;/p&gt;
+&lt;p&gt;This is a lecture note referenced in the paper that I talked about in the post &lt;a class=&#34;link&#34; href=&#34;https://henryzhangzhy.github.io/2019/08/12/a-multi-sensor-fusion-system-for-moving-object-detection-and-tracking-in-urban-driving-environments.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;a multi-sensor fusion system for moving object detection and tracking in urban driving environments&lt;/a&gt;. In this lecture note, the probability foundations and some methods of multi sensor fusion are discussed.&lt;/p&gt;
+&lt;h2 id=&#34;2-probabilistic-data-fusion&#34;&gt;2 Probabilistic Data Fusion&lt;/h2&gt;
+&lt;h3 id=&#34;21-probabilistic-models&#34;&gt;2.1 Probabilistic Models&lt;/h3&gt;
+&lt;p&gt;Introduced definition of probability density function and its property. Conditional Probability and total probability theorem were explained. Details goes my post about &lt;a class=&#34;link&#34; href=&#34;https://henryzhangzhy.github.io/2019/08/15/probability-notes.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;probability notes&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;We use random variable $\mathbf{x}$ to represent the state that we want to estimate. use random variable $\mathbf{z}$ to represent the observation that we get.&lt;/p&gt;
+&lt;h3 id=&#34;22-probabilistic-methods&#34;&gt;2.2 Probabilistic Methods&lt;/h3&gt;
+&lt;h4 id=&#34;221-bayes-theorem&#34;&gt;2.2.1 Bayes theorem&lt;/h4&gt;
+&lt;p&gt;Bayes theorem offers the tool to directly combine observations and prior beliefs.
+$$\begin{equation}
+P(\mathbf{x} | \mathbf{z}) = \frac{P(\mathbf{z} | \mathbf{x}) P(\mathbf{x})}{P(\mathbf{z})} .
+\end{equation}$$&lt;/p&gt;
+&lt;h4 id=&#34;222-data-fusion-using-bayes-theorem&#34;&gt;2.2.2 Data Fusion using Bayes Theorem&lt;/h4&gt;
+&lt;p&gt;For multi sensor fusion, we want to combine the information of multiple observations, thus we have
+$$\begin{equation}
+P(\mathbf{x} | \mathbf{Z^n}) = \frac{P(\mathbf{Z^n} | \mathbf{x}) P(\mathbf{x})}{P(\mathbf{Z^n})} .
+\end{equation}$$
+Since it is often the case that observations are only dependent on the internal state $\mathbf{x}$, or conditionally independent on $\mathbf{x}$. We have
+$$\begin{equation}
+P(\mathbf{x} | \mathbf{Z^n}) = CP(\mathbf{x}) \sum_{i=1}^{n}P(\mathbf{z_i} | \mathbf{x}).
+\end{equation}$$&lt;/p&gt;
+&lt;h4 id=&#34;223-recursive-bayes-updating&#34;&gt;2.2.3 Recursive Bayes Updating&lt;/h4&gt;
+&lt;p&gt;Do we have to start from the initial prior all the time, multiplying all the probability of observations? We can actually do it recursively.&lt;/p&gt;
+&lt;p&gt;$$\begin{equation}
+P(\mathbf{x}|\mathbf{Z^k}) = \frac{P(\mathbf{Z^k}|\mathbf{x})P(\mathbf{x})}{P(\mathbf{Z^k})}
+\end{equation}$$
+$$\begin{equation}
+= \frac{P(\mathbf{z_k}, \mathbf{Z^{k-1}}|\mathbf{x})P(\mathbf{x})}{P(\mathbf{Z^k})}
+\end{equation}$$
+$$\begin{equation}
+= \frac{P(\mathbf{z_k} | \mathbf{x})P(\mathbf{Z^{k-1}}|\mathbf{x})P(\mathbf{x})}{P(\mathbf{Z^k})}
+\end{equation}$$
+$$\begin{equation}
+= \frac{P(\mathbf{z_k} | \mathbf{x})P(\mathbf{x}|\mathbf{Z^{k-1}})P(\mathbf{Z^{k-1}})}{P(\mathbf{Z^k})}
+\end{equation}$$
+$$\begin{equation}
+= \frac{P(\mathbf{z_k} | \mathbf{x})P(\mathbf{x}|\mathbf{Z^{k-1}})}{P(\mathbf{z_k}|\mathbf{Z^{k-1}})}.&lt;br&gt;
+\end{equation}$$&lt;/p&gt;
+&lt;h4 id=&#34;224-data-dependency-and-bayes-networks&#34;&gt;2.2.4 Data Dependency and Bayes Networks&lt;/h4&gt;
+&lt;p&gt;Short Introduction to be belief networks.&lt;/p&gt;
+&lt;h4 id=&#34;225-distributed-data-fusion-with-bayes-theorem&#34;&gt;2.2.5 Distributed Data Fusion with Bayes Theorem&lt;/h4&gt;
+&lt;p&gt;Distributed means raw data is processed in the sensor module. This has the advantage that each sensor is &lt;strong&gt;&amp;lsquo;modular&amp;rsquo;&lt;/strong&gt; and talks in a common &lt;strong&gt;&amp;lsquo;state&amp;rsquo;&lt;/strong&gt; language. However, it has the disadvantage that a complete likelihood, rather than a single observation, must be communicated.&lt;/p&gt;
+&lt;h4 id=&#34;226-data-fusion-with-log-likelihoods&#34;&gt;2.2.6 Data Fusion with Log-Likelihoods&lt;/h4&gt;
+&lt;p&gt;If we take log of the Beyes Theorem, it becomes
+$$\begin{equation}
+\mathbf{l}(\mathbf{x} | \mathbf{z}) = \mathbf{l}(\mathbf{z} | \mathbf{x}) + \mathbf{l}(\mathbf{x}) - \mathbf{l}(\mathbf{z}).
+\end{equation}$$&lt;/p&gt;
+&lt;p&gt;This simplifies the calculation.&lt;/p&gt;
+&lt;h3 id=&#34;23-information-measures&#34;&gt;2.3 Information Measures&lt;/h3&gt;
+&lt;p&gt;Information is a measure of the compactness of a distribution. The shannon information (or entropy) and the Fisher information are two probabilistic measures of information of particular value in data fusion problems.&lt;/p&gt;
+&lt;h4 id=&#34;231-entropic-information&#34;&gt;2.3.1 Entropic Information&lt;/h4&gt;
+&lt;p&gt;$$\begin{equation}
+H_P(\mathbf{x}) \triangleq - \mathop{\mathbb{E}} \lbrace \log P(\mathbf{x})\rbrace = - \int_{-\infty}^{\infty}P(\mathbf{x}) \mathrm{d}\mathbf{x}.
+\end{equation}$$&lt;/p&gt;
+&lt;p&gt;Note that $H_P(\cdot)$ is not strictly a function of $\mathbf{x}$ but is rather a function of the distribution $P(\cdot)$.&lt;/p&gt;
+&lt;h4 id=&#34;232-conditional-entropy&#34;&gt;2.3.2 Conditional Entropy&lt;/h4&gt;
+&lt;p&gt;$$\begin{equation}
+H_P(\mathbf{x} | z_j) \triangleq - \mathop{\mathbb{E}} \lbrace \log P(\mathbf{x} | z_j) \rbrace = - \int_{-\infty}^{\infty}P(\mathbf{x} | z_j) \mathrm{d}\mathbf{x}.
+\end{equation}$$&lt;/p&gt;
+&lt;p&gt;$$\begin{equation}
+\bar{H}(\mathbf{x} | \mathbf{z}) \triangleq - \mathop{\mathbb{E}} \lbrace H(\mathbf{x} | \mathbf{z}) \rbrace = - \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} P(\mathbf{x}, \mathbf{z}) \log P(\mathbf{x} | \mathbf{z}) \mathrm{d} \mathbf{x} \mathrm{d}\mathbf{z}.
+\end{equation}$$&lt;/p&gt;
+&lt;p&gt;It shows the entropy of an n dimensional Gaussian Distribution is
+$$\begin{equation}
+- \frac{1}{2} \log \lbrack (2 \pi e)^n | \mathbf{P} | \rbrack.
+\end{equation}$$&lt;/p&gt;
+&lt;p&gt;The entropy is proportional to the log of the determinant of the covariance. The determinant of a matrix is a volume measure (recall that the determinant is the product of the eigenvalues of a matrix and the eigenvalues define axis lengths in n space).&lt;/p&gt;
+&lt;h4 id=&#34;233-mutual-information&#34;&gt;2.3.3 Mutual Information&lt;/h4&gt;
+&lt;p&gt;$$\begin{equation}
+I(\mathbf{x}, \mathbf{z}) \triangleq - \mathop{\mathbb{E}} \lbrace \log \frac{P(\mathbf{x}, \mathbf{z})}{P(\mathbf{x}) P(\mathbf{z})} \rbrace.
+\end{equation}$$&lt;/p&gt;
+&lt;p&gt;$$\begin{equation}
+I(\mathbf{x}, \mathbf{z}) = H(\mathbf{x}) + H(\mathbf{z}) - H(\mathbf{x}, \mathbf{z}).
+\end{equation}$$&lt;/p&gt;
+&lt;p&gt;The process of predicting information gain, making a decision on sensing action, then sensing, is an efficient and effective way of managing sensing resources and of determining optimal sensing policies.&lt;/p&gt;
+&lt;h4 id=&#34;234-fisher-information&#34;&gt;2.3.4 Fisher Information&lt;/h4&gt;
+&lt;p&gt;The Fisher information $J(\mathbf{x})$ is defined as the second derivative of the log-likelihood
+$$\begin{equation} J(\mathbf{x}) \triangleq \frac{\mathrm{d^2}}{\mathrm{d}\mathbf{x^2}} \log P(\mathbf{x}).
+\end{equation}$$&lt;/p&gt;
+&lt;p&gt;Generally in a matrix form while cross entropy is a scaler.&lt;/p&gt;
+&lt;h3 id=&#34;24-alternatives-to-probability&#34;&gt;2.4 Alternatives to Probability&lt;/h3&gt;
+&lt;p&gt;Interval Calculus, Fuzzy logic and Evidential Reasoning is introduced shortly.&lt;/p&gt;
+&lt;h2 id=&#34;3-multi-sensor-estimation&#34;&gt;3 Multi-Sensor Estimation&lt;/h2&gt;
+&lt;h3 id=&#34;31-the-kalman-filter&#34;&gt;3.1 The Kalman Filter&lt;/h3&gt;
+&lt;p&gt;With certain assuptions about the observation and process models, the resulting estimate $\dot{\mathbf{x}}(t)$ minimises mean-squared error
+$$\begin{equation}
+L(t) = \int_{-\infty}^{\infty} (\mathbf{x}(t) - \hat{\mathbf{x}}(t))^T (\mathbf{x}(t) - \hat{\mathbf{x}}(t)) P(\mathbf{x}(t) | \mathbf{Z}^t) \mathrm{d} \mathbf{x}.
+\end{equation}$$&lt;/p&gt;
+&lt;p&gt;Differentiation of the above equation with respect to $\mathbf{x}(t)$ and setting equal to zero gives
+$$\begin{equation}
+\hat{\mathbf{x}}(t) = \int_{-\infty}^{\infty} \mathbf{x}(t) P(\mathbf{x}(t) | \mathbf{Z}^t) \mathrm{d} \mathbf{x}.
+\end{equation}$$&lt;/p&gt;
+&lt;p&gt;which is simply the conditional mean $ \hat{\mathbf{x}}(t) = \mathop{\mathbb{E}}(\mathbf{x}(t) | \mathbf{Z}^t).$&lt;/p&gt;
+&lt;p&gt;The Kalman Filter, and indeed any mean-squared-error estimator, computes an estimate which is the conditional mean; an average, rather than a most likely value. (Q: what is the most likely value ?)&lt;/p&gt;
+&lt;h4 id=&#34;311-state-and-sensor-models&#34;&gt;3.1.1 State and Sensor Models&lt;/h4&gt;
+&lt;p&gt;This section defineds the notations for Kalman Filter. And shows how the model is discretized.&lt;/p&gt;
+&lt;p&gt;The author claimed that it is always best to start with a continuous-time model for the state and then construct a discrete model, rather than stating the discrete model at the outset. This allows for correct identification of noise transfers and noise correlations. ??&lt;/p&gt;
+&lt;h4 id=&#34;312-the-kalman-filter-algorithm&#34;&gt;3.1.2 The Kalman Filter Algorithm&lt;/h4&gt;
+&lt;p&gt;Prediction Step:
+$$\begin{equation}
+\hat{\mathbf{x}}(k | k-1) = \mathbf{F}(k) \hat{\mathbf{x}}(k-1 | k-1) + \mathbf{B}(k) \mathbf{u}(k)
+\end{equation}$$
+$$\begin{equation}
+\mathbf{P}(k | k-1) = \mathbf{F}(k) \mathbf{P}(k-1 | k-1) \mathbf{F}^T(k) + \mathbf{G}(k) \mathbf{Q}(k) \mathbf{G}^T(k)
+\end{equation}$$&lt;/p&gt;
+&lt;p&gt;Update Step:
+$$\begin{equation}
+v(k) = \mathbf{z}(k) - \mathbf{H}(k) \hat{\mathbf{x}}(k | k-1)
+\end{equation}$$
+$$\begin{equation}
+\mathbf{S}(k) = \mathbf{R}(k) + \mathbf{H}(k) \mathbf{P}(k | k-1) \mathbf{H}^T(k)
+\end{equation}$$
+$$\begin{equation}
+\hat{\mathbf{x}}(k | k) = \hat{\mathbf{x}}(k | k-1) - \mathbf{W}(k) v(k)
+\end{equation}$$
+$$\begin{equation}
+\mathbf{P}(k | k) = \mathbf{P}(k | k-1) - \mathbf{W}(k) \mathbf{S}(k) \mathbf{W}^T(k)
+\end{equation}$$
+$$\begin{equation}
+\mathbf{W}(k) = \mathbf{P}(k | k-1) \mathbf{H}^T(k) \mathbf{S}^{-1}(k)
+\end{equation}$$&lt;/p&gt;
+&lt;h4 id=&#34;313-the-innovation&#34;&gt;3.1.3 The Innovation&lt;/h4&gt;
+&lt;p&gt;Because the &amp;rsquo;true&amp;rsquo; states are not usually available for comparison with the estimated states, the innovation is often the only measure of how well the estimator is performing. The most important property of innovation is that they form an orthogonal uncorrelated, white sequence,
+$$\begin{equation}
+\mathop{\mathbb{E}} \lbrace v(k) | \mathbf{Z}^{k-1} \rbrace = 0, \mathop{\mathbb{E}} \lbrace v(i)v^T(jj) \rbrace = \mathbf{S}(i) \delta_{ij}.
+\end{equation}$$&lt;/p&gt;
+&lt;p&gt;This can be exploited in monitoring filter performance.&lt;/p&gt;
+&lt;h4 id=&#34;314-understanding-the-kalman-filter&#34;&gt;3.1.4 Understanding the Kalman Filter&lt;/h4&gt;
+&lt;p&gt;There are three different, but related ways of thinking about the Kalman filter algorithm&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Weighted average&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Clearly, this interpretation of the Kalman filter holds only for those states which can be written as a linear combination of the observation vector.&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Conditional mean&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Orthogonal decomposition&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;315-steady-state-filter&#34;&gt;3.1.5 Steady State Filter&lt;/h4&gt;
+&lt;p&gt;Using the fact that if filtering is synchronous, and state and observation matrics time-invariant, the filter variance will converge quickly, thus $\mathbf{W}$ matrix is also converged, we can skip the computation and use paramatric model to estimate it, reduce the computation greatly.&lt;/p&gt;
+&lt;h4 id=&#34;316-asynchronous-delayed-and-asequent-observations&#34;&gt;3.1.6 Asynchronous, Delayed and Asequent observations&lt;/h4&gt;
+&lt;p&gt;Asynchronous means observations from different sensors don&amp;rsquo;t come at the same time, but without delay. Can be addressed by taking time into account, make a prediction at observing time.
+Delayed means some observations is received by the filter with some delay after it is observed. Can be addressed by dropping the current prediction and make a prediction of the observing time of that sensor.
+Asequent means delay from different sensor cause the order of receiving is different from the the order of observations. It cannot be addressed easily unless you keep some observations and recompute the estimation. The author claim this can possibly be solved by a &lt;strong&gt;inverse-covariance filter ??&lt;/strong&gt;.&lt;/p&gt;
+&lt;h4 id=&#34;317-the-extended-kalman-filter&#34;&gt;3.1.7 The Extended Kalman Filter&lt;/h4&gt;
+&lt;p&gt;Linearization at the estimation point.&lt;/p&gt;
+&lt;p&gt;A few comments from the author:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Jacobians needs to be recomputed every time.&lt;/li&gt;
+&lt;li&gt;The model is based on lieanrization at the estimated trajectory, thus if the estimation is not accurate, the second or higher order term cannot be ignored and make it useless. This also requires that initialization should be careful.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;32-the-multi-sensor-kalman-filter&#34;&gt;3.2 The Multi-Sensor Kalman Filter&lt;/h3&gt;
+&lt;h4 id=&#34;321-observation-models&#34;&gt;3.2.1 Observation Models&lt;/h4&gt;
+&lt;h4 id=&#34;322-the-group-sensor-method&#34;&gt;3.2.2 The Group-Sensor Method&lt;/h4&gt;
+&lt;p&gt;It basiclly stacks all the observations and observation models, treating them as one sensor. The Kalman Filter can be directly applied. The problems is that sensors are assumed to be synchronous and computational complexity of matrix inversion is $\mathbf{O}(n^3)$ as the number of sensors increases.&lt;/p&gt;
+&lt;h4 id=&#34;323-the-sequential-sensor-method&#34;&gt;3.2.3 The Sequential-Sensor Method&lt;/h4&gt;
+&lt;p&gt;Treat each observation and observation model independently, make a prediction and update each observation is made. The requires too much predicitons and updates when sensor number increases, though it is linear of the number of sensors. CMU paper &lt;a class=&#34;link&#34; href=&#34;https://henryzhangzhy.github.io/2019/08/12/a-multi-sensor-fusion-system-for-moving-object-detection-and-tracking-in-urban-driving-environments.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;a multi-sensor fusion system for moving object detection and tracking in urban driving environments&lt;/a&gt; applied this method.&lt;/p&gt;
+&lt;h4 id=&#34;324-the-inverse-covariance-form&#34;&gt;3.2.4 The Inverse-Covariance Form&lt;/h4&gt;
+&lt;p&gt;This is essentially a information filter, the good side is it simplifies the update step, while the only inversion would be the $P$ matrix, only of the size of states and not related to the number of sensors.&lt;/p&gt;
+&lt;h4 id=&#34;325-track-to-track-fusion&#34;&gt;3.2.5 Track-to-Track Fusion&lt;/h4&gt;
+&lt;p&gt;Sensor will do filtering locally and pass the posterior to the center, the center will fuse them together. Method can be covariance-weighted Average.&lt;/p&gt;
+&lt;h3 id=&#34;33-non-linear-data-fusion-methods&#34;&gt;3.3 Non-linear Data Fusion Methods&lt;/h3&gt;
+&lt;p&gt;Bayes filter is mentioned. Listed particle-filter and the sum-of-gaussians (gaussian mixture) method.&lt;/p&gt;
+&lt;h3 id=&#34;34-multi-sensor-data-association&#34;&gt;3.4 Multi-Sensor Data Association&lt;/h3&gt;
+&lt;p&gt;The idea is to use the nomalized innovation distance.&lt;/p&gt;
+&lt;h4 id=&#34;341-the-nearest-neighbour-standard-filter&#34;&gt;3.4.1 The Nearest-Neighbour Standard Filter&lt;/h4&gt;
+&lt;p&gt;Match the closest one, not suitable for highly clustered detections.&lt;/p&gt;
+&lt;h4 id=&#34;342-the-probabilistic-data-association-filter&#34;&gt;3.4.2 The Probabilistic Data Association Filter&lt;/h4&gt;
+&lt;p&gt;Keep a mixture of all the observations within a certain range of the prediction to form a combined state and do the prediction again.&lt;/p&gt;
+&lt;p&gt;The good thing is you are never wrong, but you are never right as well.&lt;/p&gt;
+&lt;h4 id=&#34;343-the-multiple-hypothesis-tracking-mht-filter&#34;&gt;3.4.3 The Multiple Hypothesis Tracking (MHT) Filter&lt;/h4&gt;
+&lt;p&gt;Keep a hypothesis for all observations within certain range. Compute the likelihood and drop protential not good trackings.&lt;/p&gt;
+&lt;h4 id=&#34;344-data-association-in-track-to-track-fusion&#34;&gt;3.4.4 Data Association in Track-to-Track Fusion&lt;/h4&gt;
+&lt;p&gt;Weighted average.&lt;/p&gt;
+&lt;h4 id=&#34;345-maintaining-and-managing-track-files&#34;&gt;3.4.5 Maintaining and Managing Track Files&lt;/h4&gt;
+&lt;p&gt;Refer to other literature.&lt;/p&gt;
+&lt;h2 id=&#34;others&#34;&gt;Others&lt;/h2&gt;
+&lt;p&gt;Section 4 metions about distributed sensor fusion and 5 metions about decision make, which are not of interest here.&lt;/p&gt;
+&lt;h1 id=&#34;questions&#34;&gt;Questions&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;How do we discretize the kalman filter?&lt;/li&gt;
+&lt;li&gt;How is $\mathbf{HPH}^T$ a projection?&lt;/li&gt;
+&lt;li&gt;How is the gain being computed?&lt;/li&gt;
+&lt;li&gt;What are the three interpretation?&lt;/li&gt;
+&lt;li&gt;How to use information filter to solve asequent data?&lt;/li&gt;
+&lt;li&gt;How to use information filter to solve multi sensor problems?&lt;/li&gt;
+&lt;li&gt;How is the steady state filter parameter being choosed?&lt;/li&gt;
+&lt;li&gt;What are the difference of the association methods?&lt;/li&gt;
+&lt;li&gt;Why $ \mathbf{GQG}^T$ in kalman filter prediction?&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+        <item>
+        <title>Posts Set</title>
+        <link>http://localhost:1313/p/posts-set/</link>
+        <pubDate>Thu, 08 Aug 2019 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/p/posts-set/</guid>
+        <description>&lt;p&gt;This is the first post on this website. Thanks to Github Pages, Hugo.&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Archives</title>
+        <link>http://localhost:1313/archives/</link>
+        <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/archives/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Links</title>
+        <link>http://localhost:1313/links/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/links/</guid>
+        <description>&lt;!-- To use this feature, add `links` section to frontmatter.
+
+This page&#39;s frontmatter:
+
+```yaml
+links:
+  - title: GitHub
+    description: GitHub is the world&#39;s largest software development platform.
+    website: https://github.com
+    image: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png
+  - title: TypeScript
+    description: TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.
+    website: https://www.typescriptlang.org
+    image: ts-logo-128.jpg
+```
+
+`image` field accepts both local and external images. --&gt;</description>
+        </item>
+        <item>
+        <title>Search</title>
+        <link>http://localhost:1313/search/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/search/</guid>
+        <description></description>
+        </item>
+        
+    </channel>
+</rss>
