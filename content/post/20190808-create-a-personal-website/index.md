@@ -22,6 +22,16 @@ Github Pages allow you create a repository with the name of your accountname.git
 
 ---
 
+### Updates
+
+The current site is built from Hugo. Adapting a Jekyll site to Hugo site is easy. A few useful links
+
+1. [Setting up Hugo locally](https://gohugo.io/installation/)
+2. [The hugo Theme used by this homepage Stack](https://github.com/CaiJimmy/hugo-theme-stack/tree/master)
+3. [Host on GitHub Pages](https://gohugo.io/hosting-and-deployment/hosting-on-github/)
+
+---
+
 ### 1. setup Github Pages
 
 Following content will tell you how to setup Github Pages (the server side) and create a simple HTML page. The content are directly copied from [Github Pages](<https://pages.github.com>)\[1\]
