@@ -19,6 +19,16 @@ menu:
 
 Hengyuan Zhang is a Ph.D. student at the CSE Department of UCSD. He is a member of the [Autonomous Vehicle Laboratory](http://avl.ucsd.edu/) with [Prof. Henrik I. Christensen](http://www.hichristensen.net/). He earned his master’s degree in Intelligent Systems, Robotics and Control at the ECE Department of UCSD and Bachelor’s degree in Automation at Nanjing University. His research is in online mapping and sensor fusion in Autonomous Driving. He is part of the founding team in the Autonomous Vehicle Lab and has worked on semantic mapping, online mapping, LiDAR based detection, tracking and lidar-camera fusion for object tracking at AVL. He is excited about using robotics technologies to make human lives better.
 
+### Publications
+
+1. Ranganatha N.\*, __Zhang H.\*__, Venkatramani S., Liao, J., and Christensen H. SemVecNet: Online Vector Map Generation through Sensor-Configuration-Agnostic Semantic Mapping, 2024 IEEE Intelligent Vehicles Symposium (IV), Jeju, Korea, 2024. (Accepted)
+1. Paz, D., __Zhang, H.__, Xiang, H., Liang, A., and Christensen, H.I. Conditional Generative Models for Dynamic Trajectory Generation and Urban Driving. Sensors 2023, 23, 6764.
+1. __Zhang, H.\*__, Venkatramani S.\*, Paz, D., Li, Q., Xiang, H., and Christensen, H.. Probabilistic Semantic Mapping for Autonomous Driving in Urban Environments, Sensors 2023, Special Issue in “Advanced Sensing Techniques for Autonomous Vehicles and Advanced Driver Assistance Systems (ADAS)”.
+1. __Zhang, H.\*__, Liao, J.\*, Paz, D., Christensen, H. Robust Human Identity Anonymization using Pose Estimation. International Conference on Automation Science and Engineering (CASE) 2022.
+1. Christensen, H., Paz, D., __Zhang, H.__, Meyer, D., Xiang, H., Han, Y., Liu, Y., Liang, A., Zhong, Z., and Tang, S., Autonomous Vehicles for Micro-mobility. In Autonomous Intelligent Systems (Nov 2021).
+1. Paz, D., __Zhang, H.__, and Christensen, H. TridentNet: A Conditional Generative Model for Dynamic Trajectory Generation. In Intelligent Autonomous Systems (Singapore, June 2021)
+1. Paz, D.\*, __Zhang, H.__\*, Li, Q.\*, Xiang, H.\*, and Christensen, H. Probabilistic Semantic Mapping for Urban Autonomous Driving Applications. In Intelligent Robots and Systems (Las Vegas, US, October 2020)
+1. Paz, D., Lai, P.-J., Harish, S., __Zhang, H.__, Chan, N., Hu, C., Binnani, S., and Christensen, H. Lessons learned from deploying autonomous vehicles at UC San Diego. In Field and Service Robotics (Tokyo, JP, August 2019)
 
 ---
 
